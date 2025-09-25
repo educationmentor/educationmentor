@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Hero from "./hero";
+import Hero from "./Hero";
 import Feature from "./feature";
 import CareerCounselling from "./CareerCounselling";
 import Visa from "./Visa";
