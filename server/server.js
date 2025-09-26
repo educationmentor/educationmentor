@@ -9,6 +9,7 @@ import rateLimit from 'express-rate-limit';
 
 // Import database connection
 import connectDB from './config/database.js';
+import { checkDatabaseConnection } from './middleware/dbCheck.js';
 
 // Import routes
 import authRoutes from './routes/auth.js';
@@ -18,8 +19,29 @@ import consultationRoutes from './routes/consultationForm.js';
 
 const app = express();
 
-// Connect to database
-connectDB();
+// Connect to database with retry mechanism
+const initializeDatabase = async (retries = 3) => {
+  for (let i = 0; i < retries; i++) {
+    try {
+      await connectDB();
+      console.log('✅ Database connection established');
+      return;
+    } catch (error) {
+      console.error(`❌ Database connection attempt ${i + 1} failed:`, error.message);
+      
+      if (i === retries - 1) {
+        console.error('💥 All database connection attempts failed');
+        process.exit(1);
+      }
+      
+      console.log(`🔄 Retrying database connection in 2 seconds...`);
+      await new Promise(resolve => setTimeout(resolve, 2000));
+    }
+  }
+};
+
+// Initialize database before starting server
+initializeDatabase();
 
 // Security middleware
 app.use(helmet());
@@ -79,6 +101,9 @@ app.options('*', (req, res) => {
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 
+
+// Database connection check middleware
+app.use('/api', checkDatabaseConnection);
 
 // Routes
 app.use('/api/auth', authRoutes);
