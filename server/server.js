@@ -22,25 +22,7 @@ const app = express();
 connectDB();
 
 // Security middleware
-app.use(helmet({
-  crossOriginEmbedderPolicy: false,
-  contentSecurityPolicy: false
-}));
-
-// Handle HTTPS redirects properly for CORS
-app.use((req, res, next) => {
-  // Don't redirect preflight requests
-  if (req.method === 'OPTIONS') {
-    return next();
-  }
-  
-  // Handle HTTPS redirects
-  if (req.header('x-forwarded-proto') !== 'https' && process.env.NODE_ENV === 'production') {
-    res.redirect(301, `https://${req.header('host')}${req.url}`);
-  } else {
-    next();
-  }
-});
+app.use(helmet());
 
 // Rate limiting
 const limiter = rateLimit({
