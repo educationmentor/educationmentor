@@ -7,12 +7,23 @@ export const checkDatabaseConnection = (req, res, next) => {
   }
 
   // Check if mongoose is connected
-  if (mongoose.connection.readyState !== 1) {
-    console.error('❌ Database not connected. ReadyState:', mongoose.connection.readyState);
+  const readyState = mongoose.connection.readyState;
+  
+  if (readyState !== 1) {
+    const stateMessages = {
+      0: 'disconnected',
+      1: 'connected',
+      2: 'connecting',
+      3: 'disconnecting'
+    };
+    
+    console.error(`❌ Database not ready. State: ${readyState} (${stateMessages[readyState]})`);
+    
     return res.status(503).json({
       success: false,
       message: 'Database connection not available',
-      error: 'Service temporarily unavailable. Please try again in a moment.'
+      error: `Database is ${stateMessages[readyState]}. Please try again in a moment.`,
+      retryAfter: 5 // seconds
     });
   }
 

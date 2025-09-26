@@ -25,7 +25,7 @@ const initializeDatabase = async (retries = 3) => {
     try {
       await connectDB();
       console.log('✅ Database connection established');
-      return;
+      return true;
     } catch (error) {
       console.error(`❌ Database connection attempt ${i + 1} failed:`, error.message);
       
@@ -39,9 +39,6 @@ const initializeDatabase = async (retries = 3) => {
     }
   }
 };
-
-// Initialize database before starting server
-initializeDatabase();
 
 // Security middleware
 app.use(helmet());
@@ -148,9 +145,23 @@ app.use((err, req, res, next) => {
 
 const PORT = process.env.PORT || 5000 ;
 
+// Start server only after database connection is established
+const startServer = async () => {
+  try {
+    // Wait for database connection
+    await initializeDatabase();
+    
+    // Start the server
+    app.listen(PORT, () => {
+      console.log(`🚀 Server running on port ${PORT}`);
+      console.log(`📚 Education Mentor API is ready!`);
+      console.log(`🌍 Environment: ${process.env.NODE_ENV}`);
+    });
+  } catch (error) {
+    console.error('💥 Failed to start server:', error.message);
+    process.exit(1);
+  }
+};
 
-app.listen(PORT, () => {
-  console.log(`🚀 Server running on port ${PORT}`);
-  console.log(`📚 Education Mentor API is ready!`);
-  console.log(`🌍 Environment: ${process.env.NODE_ENV}`);
-});
+// Start the server
+startServer();

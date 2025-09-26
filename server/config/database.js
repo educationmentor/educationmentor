@@ -21,6 +21,11 @@ const connectDB = async () => {
     console.log(`✅ MongoDB Connected: ${conn.connection.host}`);
     console.log(`📊 Database: ${conn.connection.name}`);
     
+    // Verify connection is fully established
+    if (mongoose.connection.readyState !== 1) {
+      throw new Error('Database connection not fully established');
+    }
+    
     // Handle connection events
     mongoose.connection.on('error', (err) => {
       console.error('❌ MongoDB connection error:', err);
