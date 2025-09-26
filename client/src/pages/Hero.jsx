@@ -1,13 +1,21 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import HeroImage from '../assets/images/hero1.png';
 import avatar1 from '../assets/images/avatar1.png';
 import avatar2 from '../assets/images/avatar2.png';
 import avatar3 from '../assets/images/avatar3.png';
 import avatar4 from '../assets/images/avatar4.png';
+import ConsultationForm from '../components/ConsultationForm';
 
 
 const Hero = () => {
-
+  const [showConsultationForm, setShowConsultationForm] = useState(false);
+  useEffect(() => {
+    if (showConsultationForm) {
+      document.body.style.overflow = "hidden"; // Disable scrolling
+    } else {
+      document.body.style.overflow = "auto"; // Enable scrolling
+    }
+  }, [showConsultationForm]);
   // bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 
   return (
     <section className="min-h-screen bg-white px-5 py-16 flex items-center">
@@ -34,7 +42,7 @@ const Hero = () => {
                 </button>
               </div>
 
-              <button className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-5 rounded-full font-semibold hover:from-purple-700 hover:to-indigo-700 transform hover:-translate-y-1 transition-all duration-200 shadow-lg">
+              <button onClick={() => setShowConsultationForm(true)} className="bg-gradient-to-r cursor-pointer from-purple-600 to-indigo-600 text-white px-5 rounded-full font-semibold hover:from-purple-700 hover:to-indigo-700 transform hover:-translate-y-1 transition-all duration-200 shadow-lg">
                 Book Free Consultation
               </button>
             </div>
@@ -79,6 +87,13 @@ const Hero = () => {
                   </div>
         </div>
       </div>
+      {showConsultationForm && (
+        <div className="fixed top-0 left-0 w-full h-screen  bg-opacity-50 
+                       flex items-center justify-center z-50 
+                       animate-in fade-in duration-300">
+          <ConsultationForm onClose={() => setShowConsultationForm(false)} />
+        </div>
+      )}
     </section>
   )
 }
