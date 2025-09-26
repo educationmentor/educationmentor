@@ -32,6 +32,7 @@ const limiter = rateLimit({
 });
 app.use(limiter);
 
+console.log(process.env.NODE_ENV);
 // CORS configuration - More permissive for production
 app.use(cors({
   origin: [
