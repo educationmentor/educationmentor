@@ -32,34 +32,15 @@ const limiter = rateLimit({
 });
 app.use(limiter);
 
-// CORS configuration
-const allowedOrigins = [
-  'http://localhost:5173',
-  'http://localhost:3000',
-  'https://educationalmentor.com',
-  'https://www.educationalmentor.com',
-  'https://educationmentor-w1dk.vercel.app'
-];
-
-// More permissive CORS for production
+// CORS configuration - More permissive for production
 app.use(cors({
-  origin: function (origin, callback) {
-    // Allow requests with no origin (like mobile apps or curl requests)
-    if (!origin) return callback(null, true);
-    
-    // Check if origin is in allowed list
-    if (allowedOrigins.indexOf(origin) !== -1) {
-      return callback(null, true);
-    }
-    
-    // Allow any subdomain of educationalmentor.com
-    if (origin && origin.match(/^https:\/\/.*\.educationalmentor\.com$/)) {
-      return callback(null, true);
-    }
-    
-    console.log('CORS blocked origin:', origin);
-    callback(new Error('Not allowed by CORS'));
-  },
+  origin: [
+    'http://localhost:5173',
+    'http://localhost:3000',
+    'https://educationalmentor.com',
+    'https://www.educationalmentor.com',
+    'https://educationmentor-w1dk.vercel.app'
+  ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
   allowedHeaders: [
@@ -71,28 +52,25 @@ app.use(cors({
     'Access-Control-Request-Method',
     'Access-Control-Request-Headers'
   ],
-  optionsSuccessStatus: 200,
-  preflightContinue: false
+  optionsSuccessStatus: 200
 }));
 
 // Compression middleware
 app.use(compression());
 
-// Handle preflight requests
+// Handle preflight requests with debugging
 app.options('*', (req, res) => {
   const origin = req.headers.origin;
+  console.log('🔍 Preflight request from origin:', origin);
   
-  // Check if origin is allowed
-  if (allowedOrigins.includes(origin) || (origin && origin.match(/^https:\/\/.*\.educationalmentor\.com$/))) {
-    res.header('Access-Control-Allow-Origin', origin);
-  } else {
-    res.header('Access-Control-Allow-Origin', '*');
-  }
-  
+  // Set CORS headers
+  res.header('Access-Control-Allow-Origin', origin || '*');
   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS, PATCH');
   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With, Accept, Origin, Access-Control-Request-Method, Access-Control-Request-Headers');
   res.header('Access-Control-Allow-Credentials', 'true');
   res.header('Access-Control-Max-Age', '86400'); // 24 hours
+  
+  console.log('✅ CORS headers set for origin:', origin);
   res.sendStatus(200);
 });
 
@@ -110,6 +88,16 @@ app.get('/api/health', (req, res) => {
   res.json({ 
     status: 'OK', 
     message: 'Education Mentor API is running',
+    timestamp: new Date().toISOString()
+  });
+});
+
+// CORS test endpoint
+app.get('/api/cors-test', (req, res) => {
+  res.json({
+    success: true,
+    message: 'CORS is working!',
+    origin: req.headers.origin,
     timestamp: new Date().toISOString()
   });
 });
