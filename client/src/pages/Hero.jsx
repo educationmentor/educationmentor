@@ -5,92 +5,104 @@ import avatar2 from '../assets/images/avatar2.png';
 import avatar3 from '../assets/images/avatar3.png';
 import avatar4 from '../assets/images/avatar4.png';
 import ConsultationForm from '../components/ConsultationForm';
-
+import seacrh from '../assets/images/search.png';
+import Vector from '../assets/images/Vector.png';
 
 const Hero = () => {
   const [showConsultationForm, setShowConsultationForm] = useState(false);
   useEffect(() => {
     if (showConsultationForm) {
-      document.body.style.overflow = "hidden"; // Disable scrolling
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "auto"; // Enable scrolling
+      document.body.style.overflow = "auto";
     }
   }, [showConsultationForm]);
   // bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 
   return (
-    <section className="min-h-screen bg-white px-5 py-16 flex items-center">
+    <section className="md:min-h-screen min-h-[85vh]  bg-white px-4 sm:px-5 py-8 sm:py-16 flex items-center">
       <div className="max-w-7xl mx-auto w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="space-y-8 lg:pr-10">
-            <p className="text-gray-600 text-sm font-semibold tracking-widest uppercase mb-5">OUR GOAL</p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-indigo-900 leading-tight">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+          <div className="space-y-5 sm:space-y-8 lg:pr-10">
+            <div className="pt-0 sm:pt-0">
+              <div className="flex items-center justify-start gap-2">
+                <span className="text-gray-400 text-base sm:text-sm font-semibold tracking-widest uppercase">
+                  OUR GOAL
+                </span>
+                <img src={Vector} alt="" className="w-12 h-3 object-contain" />
+              </div>
+            </div>
+            <h1 className="mt-2 text-xl xs:text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-indigo-900 leading-tight text-left">
               Boost Your Career Journey With Us!
             </h1>
-            <p className="text-gray-600 text-lg leading-relaxed">
+            <p className="text-gray-600 text-sm xs:text-base sm:text-lg leading-relaxed text-left">
               Get real time mentorship through video chat from the best counsellors, alumni's and students of universities across the globe.
             </p>
-            
-            <div className="space-y-5 gap-5 flex">
-              <div className="flex bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-3 sm:space-y-0 w-full">
+              <div className="flex-1 flex items-center bg-[#D5CEE4] rounded-xl shadow-lg border border-gray-200 overflow-hidden w-full min-h-[48px] sm:min-h-[56px]">
                 <input 
                   type="text" 
-                  placeholder="Search for Countries or courses"
-                  className="flex-1 px-8 py-4 text-gray-700 placeholder-gray-500 border-none outline-none"
+                  placeholder="Search for Courses"
+                  className="flex-1 px-3 sm:px-8 py-2 sm:py-4 text-gray-900 placeholder-gray-700 border-none outline-none text-sm sm:text-base bg-transparent"
+                  style={{ minWidth: 0 }}
                 />
-                <button className=" bg-gray-50 text-gray-600 hover:bg-gray-100 transition-colors">
-                  🔍
-                </button>
+                <img
+                  src={seacrh}
+                  alt="Search"
+                  className="w-6 h-6 mx-3"
+                />
               </div>
-
-              <button onClick={() => setShowConsultationForm(true)} className="bg-gradient-to-r cursor-pointer from-purple-600 to-indigo-600 text-white px-5 rounded-full font-semibold hover:from-purple-700 hover:to-indigo-700 transform hover:-translate-y-1 transition-all duration-200 shadow-lg">
+              <button
+                onClick={() => setShowConsultationForm(true)}
+                className="w-full sm:w-auto mt-2 sm:mt-0 bg-gradient-to-r cursor-pointer from-purple-600 to-indigo-600 text-white px-5 sm:px-8 py-2.5 sm:py-4 rounded-full font-semibold hover:from-purple-700 hover:to-indigo-700 transform hover:-translate-y-1 transition-all duration-200 shadow-lg text-base"
+              >
                 Book Free Consultation
               </button>
             </div>
-            
-            <div className="flex items-center space-x-3">
-              <div className="flex -space-x-2">
-                <img
-                  src={avatar1}
-                  alt="Student 1"
-                  className="w-10 h-10 rounded-full border-2 object-cover shadow"
-                  style={{ borderColor: '#3E05B080', borderStyle: 'solid' }}
-                />
-                <img
-                  src={avatar2}
-                  alt="Student 2"
-                  className="w-10 h-10 rounded-full border-2 object-cover shadow"
-                  style={{ borderColor: '#3E05B080', borderStyle: 'solid' }}
-                />
-                <img
-                  src={avatar3}
-                  alt="Student 3"
-                  className="w-10 h-10 rounded-full border-2 object-cover shadow"
-                  style={{ borderColor: '#3E05B080', borderStyle: 'solid' }}
-                />
-                <img
-                  src={avatar4}
-                  alt="Student 4"
-                  className="w-10 h-10 rounded-full border-2 object-cover shadow"
-                  style={{ borderColor: '#3E05B080', borderStyle: 'solid' }}
-                />
+            <div className="flex flex-col rounded-full sm:flex-row items-center mt-3">
+              <div className="flex items-center justify-center sm:justify-start w-full">
+                <div className="flex -space-x-2">
+                  <img
+                    src={avatar1}
+                    alt="Student 1"
+                    className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 object-cover shadow"
+                    style={{ borderColor: '#3E05B080', borderStyle: 'solid' }}
+                  />
+                  <img
+                    src={avatar2}
+                    alt="Student 2"
+                    className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 object-cover shadow"
+                    style={{ borderColor: '#3E05B080', borderStyle: 'solid' }}
+                  />
+                  <img
+                    src={avatar3}
+                    alt="Student 3"
+                    className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 object-cover shadow"
+                    style={{ borderColor: '#3E05B080', borderStyle: 'solid' }}
+                  />
+                  <img
+                    src={avatar4}
+                    alt="Student 4"
+                    className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 object-cover shadow"
+                    style={{ borderColor: '#3E05B080', borderStyle: 'solid' }}
+                  />
+                </div>
+                <span className="ml-3 text-[#290572] font-bold text-xs sm:text-base whitespace-nowrap">
+                  Trusted by students worldwide
+                </span>
               </div>
-              <span className="text-[#290572] font-bold font-medium">Trusted by students worldwide</span>
             </div>
           </div>
-          
-          <div className="relative flex justify-center items-center">
+          <div className="relative flex justify-center items-center mt-8 lg:mt-0">
             <img 
               src={HeroImage}
               alt="Students with global education background" 
-              className="w-full max-w-xl h-135 rounded-2xl object-cover "
+              className="w-11/12 xs:w-10/12 sm:w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl h-48 xs:h-56 sm:h-96 md:h-[32rem] lg:h-[34rem] rounded-xl object-cover bg-white "
             />
-                  </div>
+          </div>
         </div>
       </div>
       {showConsultationForm && (
-        <div className="fixed top-0 left-0 w-full h-screen  bg-opacity-50 
-                       flex items-center justify-center z-50 
-                       animate-in fade-in duration-300">
+        <div className="fixed top-0 left-0 w-full h-screen bg-black bg-opacity-50 flex items-center justify-center z-50 animate-in fade-in duration-300">
           <ConsultationForm onClose={() => setShowConsultationForm(false)} />
         </div>
       )}
