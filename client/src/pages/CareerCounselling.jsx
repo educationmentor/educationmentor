@@ -1,6 +1,6 @@
 import React from "react";
 import image1 from "../assets/images/image1.png";
-import smile from "../assets/images/smile.png";
+import smile from "../assets/images/Smile.png";
 import home from "../assets/images/home.png";
 import ornament from "../assets/images/ornament.jpg";
 
