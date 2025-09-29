@@ -19,7 +19,7 @@ const Hero = () => {
   }, [showConsultationForm]);
   // bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 
   return (
-    <section className="md:min-h-screen min-h-[85vh]  bg-white px-4 sm:px-5 py-8 sm:py-16 flex items-center">
+    <section className="md:min-h-screen min-h-[85vh] bg-white px-4 sm:px-5 py-8 sm:py-16 flex items-center">
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           <div className="space-y-5 sm:space-y-8 lg:pr-10">
