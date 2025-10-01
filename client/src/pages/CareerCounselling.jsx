@@ -65,8 +65,8 @@ const CareerCounselling = () => {
             {/* Career Counselling Card */}
             <div className="absolute ps-6 -bottom-8 -left-4 sm:-bottom-8 sm:-left-10 bg-white rounded-xl shadow-lg p-3 sm:p-4 max-w-[90vw] sm:max-w-xs flex items-center w-[90vw] sm:w-auto">
               <div className="flex items-center justify-center mr-3">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-purple-400 rounded-full flex items-center justify-center">
-                  <img src={smile} alt="smile" className="w-6 h-6 sm:w-7 sm:h-7" />
+                <div className="sm:w-14 sm:h-14 rounded-full flex items-center justify-center">
+                  <img src={smile} alt="smile" className="w-12 h-12  sm:w-12 sm:h-12" />
                 </div>
               </div>
               <div>

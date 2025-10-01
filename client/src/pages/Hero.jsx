@@ -31,7 +31,7 @@ const Hero = () => {
                 <img src={Vector} alt="" className="w-12 h-3 object-contain" />
               </div>
             </div>
-            <h1 className="mt-2 text-xl xs:text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-indigo-900 leading-tight text-left">
+            <h1 className="mt-2 text-xl xs:text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#050E62] leading-tight text-left">
               Boost Your Career Journey With Us!
             </h1>
             <p className="text-gray-600 text-sm xs:text-base sm:text-lg leading-relaxed text-left">
@@ -41,8 +41,8 @@ const Hero = () => {
               <div className="flex-1 flex items-center bg-[#D5CEE4] rounded-xl shadow-lg border border-gray-200 overflow-hidden w-full min-h-[48px] sm:min-h-[56px]">
                 <input 
                   type="text" 
-                  placeholder="Search for Courses"
-                  className="flex-1 px-3 sm:px-8 py-2 sm:py-4 text-gray-900 placeholder-gray-700 border-none outline-none text-sm sm:text-base bg-transparent"
+                  placeholder="Search for Courses or Courses"
+                  className="flex-1 px-2 sm:px-4 py-2 sm:py-4 text-gray-900 placeholder-gray-700 border-none outline-none text-sm sm:text-sm bg-transparent"
                   style={{ minWidth: 0 }}
                 />
                 <img
@@ -96,7 +96,8 @@ const Hero = () => {
             <img 
               src={HeroImage}
               alt="Students with global education background" 
-              className="w-11/12 xs:w-10/12 sm:w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl h-48 xs:h-56 sm:h-96 md:h-[32rem] lg:h-[34rem] rounded-xl object-cover bg-white "
+             className="w-[90%] max-w-lg h-48 xs:h-56 sm:h-96 md:h-[32rem] lg:h-[34rem] bg-white object-cover"
+
             />
           </div>
         </div>

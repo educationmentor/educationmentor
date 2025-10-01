@@ -65,7 +65,7 @@ const Visa = () => {
               />
               
               {/* Floating Visa Help Card */}
-              <div className="absolute bottom-8  -left-3 bg-white rounded-xl shadow-xl p-4 max-w-xs border border-gray-100 z-50">
+              <div className="absolute bottom-8  -left-3 bg-white rounded-xl shadow-xl p-4 max-w-xs border border-gray-100 z-20">
                 <div className="flex items-center space-x-3">
                   <div className="w-15 h-15 bg-purple-400 rounded-full flex items-center justify-center">
                     <img src={Frame} alt="" className="w-8 h-8" />

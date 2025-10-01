@@ -6,7 +6,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="w-full bg-white shadow-sm fixed top-0 left-0 z-50">
+    <nav className="w-full bg-white  fixed top-0 left-0 z-50">
       <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
         {/* Logo / Brand */}
         <div className="text-lg font-bold text-gray-800">
@@ -56,7 +56,7 @@ const Navbar = () => {
 
       {/* Mobile Dropdown Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white shadow-md border-t">
+        <div className="md:hidden bg-white  border-t">
           <ul className="flex flex-col space-y-4 p-6 text-gray-700 font-medium">
             <li>
               <Link to="/" onClick={() => setMenuOpen(false)}>
