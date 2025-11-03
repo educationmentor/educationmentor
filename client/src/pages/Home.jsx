@@ -1,14 +1,12 @@
 import React, { useState,useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Hero from "./Hero";
-import Feature from "./feature";
-import CareerCounselling from "./CareerCounselling";
-import Visa from "./Visa";
-import Mentorship from "./Mentorship";
-import Flags from "./Flags";
-import RecentArticle from "./RecentArticle";
-import GetStarted from "./GetStarted";
-import Footer from "../components/Footer";
+import Hero from "./Home/Hero";
+import Feature from "./Home/feature";
+import CareerCounselling from "./Home/CareerCounselling";
+import Visa from "./Home/Visa";
+import Mentorship from "./Home/Mentorship";
+import Flags from "./Home/Flags";
+import RecentArticle from "./Home/RecentArticle";
 import ConsultationForm from "../components/ConsultationForm";
 
 const Home = () => {
@@ -63,8 +61,6 @@ return () => {
       <Mentorship />
       <Flags />
       <RecentArticle />
-      <GetStarted />
-      <Footer />
       {/* 💬 Show Consultation Form when triggered */}
       {showConsultationForm && (
         <div className="fixed top-0 left-0 w-full h-screen  bg-opacity-50 

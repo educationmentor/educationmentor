@@ -1,7 +1,7 @@
 import React from 'react';
-import image2 from '../assets/images/image2.png';
-import Frame from '../assets/images/Frame.png';
-import aeroplane from '../assets/images/aeroplane.png';
+import image2 from '../../assets/images/home/image2.png';
+import Frame from '../../assets/images/home/Frame.png';
+import aeroplane from '../../assets/images/home/aeroplane.png';
 const Visa = () => {
   return (
     <section className="py-20 bg-gradient-to-br from-blue-50 to-purple-50 relative overflow-hidden">

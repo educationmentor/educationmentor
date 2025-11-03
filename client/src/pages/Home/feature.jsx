@@ -1,8 +1,8 @@
 import React from 'react'
-import Ellipse1 from '../assets/images/Ellipse1.png'
+import Ellipse1 from '../../assets/images/home/Ellipse1.png'
 // Add your icon images here
-import ProfileIcon from '../assets/images/Smile.png'
-import JourneyIcon from '../assets/images/calendar.png'
+import ProfileIcon from '../../assets/images/home/Smile.png'
+import JourneyIcon from '../../assets/images/home/calendar.png'
 
 const Feature = () => {
   return (

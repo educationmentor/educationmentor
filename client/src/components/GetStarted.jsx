@@ -1,8 +1,20 @@
-import React from "react";
 import image6 from "../assets/images/image6.png";
 import { FaArrowRightLong } from "react-icons/fa6";
+import React, { useState,useEffect } from "react";
+import ConsultationForm from "./ConsultationForm";
 
 const GetStarted = () => {
+  const [showConsultationForm, setShowConsultationForm] = useState(false);
+  useEffect(() => {
+    if (showConsultationForm) {
+      document.body.style.overflow = "hidden"; // Disable scrolling
+    } else {
+      document.body.style.overflow = "auto"; // Enable scrolling
+    }
+    return () => {
+      document.body.style.overflow = "auto"; // Cleanup on unmount
+    };
+  }, [showConsultationForm]);
   return (
     <section className="pb-20 pt-50 bg-gray-50 relative overflow-hidden">
       {/* Background Decorative Elements */}
@@ -28,7 +40,7 @@ const GetStarted = () => {
                 Your journey to world-class education starts here. Let our
                 mentors help you unlock opportunities and shape your future.
               </p>
-              <button className="mt-2 bg-white text-black font-semibold rounded-full px-7 py-3 flex items-center gap-2 shadow transition hover:bg-gray-100">
+              <button onClick={()=>setShowConsultationForm(true)} className="mt-2 bg-white text-black font-semibold rounded-full px-7 py-3 flex items-center gap-2 shadow transition hover:bg-gray-100">
                 Get Started
                 <FaArrowRightLong className="w-5 h-5" />
               </button>
@@ -43,6 +55,13 @@ const GetStarted = () => {
           />
         </div>
       </div>
+      {showConsultationForm && (
+        <div className="fixed top-0 left-0 w-full h-screen  bg-opacity-50 
+                       flex items-center justify-center z-50 
+                       animate-in fade-in duration-300">
+          <ConsultationForm onClose={() => setShowConsultationForm(false)} />
+        </div>
+      )}
     </section>
   );
 };

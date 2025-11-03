@@ -1,6 +1,6 @@
 import React from "react";
-import image4 from "../assets/images/image4.png";
-import teamDiscussionImg from "../assets/images/image5.png";
+import image4 from "../../assets/images/home/image4.png";
+import teamDiscussionImg from "../../assets/images/home/image5.png";
 import { Link } from "react-router-dom";
 
 const RecentArticle = () => {

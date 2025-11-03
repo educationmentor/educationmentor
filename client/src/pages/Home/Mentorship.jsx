@@ -1,6 +1,6 @@
 import React from "react";
-import mentorsGrid from "../assets/images/image7.png";
-import avatar5 from "../assets/images/avatar5.png";
+import mentorsGrid from "../../assets/images/home/image7.png";
+import avatar5 from "../../assets/images/home/avatar5.png";
 
 const Mentorship = () => {
   return (

@@ -1,6 +1,7 @@
 import ConsultationForm from "../models/consultationForm.js";
 import asyncHandler from "express-async-handler";
 import { sendConsultationNotification, sendClientConfirmation } from "../services/emailService.js";
+import googleSheetsService from "../services/googleSheetsService.js";
 const createConsultationRequest = asyncHandler(async (req, res) => {
     try {
         const { name, email, phone, interestedCountry } = req.body;
@@ -49,6 +50,25 @@ const createConsultationRequest = asyncHandler(async (req, res) => {
             // Don't fail the request if email fails
         }
 
+        // Save to Google Sheets (separate try-catch to ensure it doesn't interfere with email)
+        try {
+            const sheetsResult = await googleSheetsService.addConsultationEntry({
+                name,
+                email,
+                phone,
+                interestedCountry
+            });
+
+            console.log('Google Sheets update:', {
+                success: sheetsResult.success,
+                error: sheetsResult.error
+            });
+            
+        } catch (sheetsError) {
+            console.error('Google Sheets update failed:', sheetsError);
+            // Don't fail the request if Google Sheets fails
+        }
+
         res.status(201).json({
             success: true,
             message: 'Consultation request created successfully. You will receive a confirmation email shortly.',
@@ -65,4 +85,60 @@ const createConsultationRequest = asyncHandler(async (req, res) => {
     }
 });
 
-export { createConsultationRequest };
+// Test Google Sheets connection
+const testGoogleSheetsConnection = asyncHandler(async (req, res) => {
+    try {
+        const result = await googleSheetsService.testConnection();
+        
+        if (result.success) {
+            res.status(200).json({
+                success: true,
+                message: 'Google Sheets connection successful',
+                data: result
+            });
+        } else {
+            res.status(500).json({
+                success: false,
+                message: 'Google Sheets connection failed',
+                error: result.error
+            });
+        }
+    } catch (error) {
+        console.error('Error testing Google Sheets connection:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Error testing Google Sheets connection',
+            error: error.message
+        });
+    }
+});
+
+// Setup Google Sheets headers
+const setupGoogleSheetsHeaders = asyncHandler(async (req, res) => {
+    try {
+        const result = await googleSheetsService.setupSheetHeaders();
+        
+        if (result.success) {
+            res.status(200).json({
+                success: true,
+                message: 'Google Sheets headers setup successful',
+                data: result
+            });
+        } else {
+            res.status(500).json({
+                success: false,
+                message: 'Google Sheets headers setup failed',
+                error: result.error
+            });
+        }
+    } catch (error) {
+        console.error('Error setting up Google Sheets headers:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Error setting up Google Sheets headers',
+            error: error.message
+        });
+    }
+});
+
+export { createConsultationRequest, testGoogleSheetsConnection, setupGoogleSheetsHeaders };

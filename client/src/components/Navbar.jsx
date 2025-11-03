@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react"; // lightweight icons
+import logo from '../assets/images/logo.png';  
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -10,7 +11,8 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
         {/* Logo / Brand */}
         <div className="text-lg font-bold text-gray-800">
-          <Link to="/">EduMentor</Link>
+          <Link to="/">
+          <img src={logo} className="w-[30vw] md:w-[8vw]" alt="EduMentor Logo"/></Link>
         </div>
 
         {/* Desktop Nav Links */}

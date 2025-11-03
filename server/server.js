@@ -52,6 +52,7 @@ const limiter = rateLimit({
 app.use(limiter);
 
 console.log(process.env.NODE_ENV);
+console.log(process.env.GOOGLE_PROJECT_ID)
 // CORS configuration - More permissive for production
 app.use(cors({
   origin: [

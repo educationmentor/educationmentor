@@ -1,7 +1,8 @@
 import React from "react";
-import GetStarted from "./GetStarted";
+import GetStarted from "../components/GetStarted";
 import Footer from "../components/Footer";
-
+import aboutHeaderImg from "../assets/images/about-us/header.png"
+import aboutHeroImg from "../assets/images/about-us/hero.png"
 const About = () => {
   const teamMembers = [
     {
@@ -52,84 +53,51 @@ const About = () => {
     <>
       <div className="min-h-screen bg-white">
         {/* Hero Section */}
-        <section className="bg-gray-600 py-20">
-          <div className="max-w-4xl mx-auto px-6 text-center">
-            <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-              Describe what makes your company unique
+        <section className="py-[4vw] px-[6vw] md:py-[5.83vw] md:px-[3.33vw] bg-cover bg-center flex flex-col justify-center mt-[15vw] md:mt-[4vw]" style={{backgroundImage: `url(${aboutHeaderImg})`}}>
+            <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-[1.5vw] text-center">
+            Believing in Accessible Global Education
             </h1>
-            <p className="text-xl text-gray-200 leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            <p className="text-sm md:text-lg text-white leading-relaxed text-center max-w-4xl mx-auto">
+            At Educational Mentor, we are driven by a powerful belief: informed and affordable<br/> mentorship is the key to unlocking global education for every student.
             </p>
-          </div>
         </section>
 
         {/* About Company Section */}
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <section className="py-[4vw] px-[6vw] md:py-[5.83vw] md:px-[8.33vw] bg-white">
+          <div className=" mx-auto ">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               {/* Left Side - Content */}
               <div className="space-y-6">
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-8">
-                  About [company name]
+                <h2 className="text-xl md:text-3xl lg:text-4xl font-bold text-[#050E62] mb-[1.5vw]">
+                  Our Story: Who We Are
                 </h2>
 
-                <div className="space-y-4 text-gray-700 leading-relaxed">
+                <div className="space-y-4 text-sm md:text-lg leading-normal">
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Phasellus blandit massa enim. Nullam id varius nunc. Id
-                    volutpat lacus laoreet non curabitur gravida arcu ac tortor
-                    dignissim convallis aenean et tortor at.
+                    Educational Mentor was founded by a team of international educators and alumni who saw a gap in the market: high-quality, end-to-end study abroad guidance was a luxury few could afford, and clear information about different countries was hard to find.
                   </p>
 
                   <p>
-                    Amet consectetur adipiscing elit pellentesque habitant morbi
-                    tristique senectus et. Faucibus pulvinar elementum integer
-                    enim neque volutpat. Ullamcorper sit amet risus nullam eget
-                    felis eget nunc. Viverra ipsum nunc aliquet bibendum enim
-                    facilisis gravida neque convallis.
+                    We started with a simple goal: to become the comprehensive and affordable mentor we wish we had. We combine deep expertise with a efficient model to provide premium services at an affordable price, while also making students truly aware of their global options.
                   </p>
 
-                  <p>
-                    Aliquam eleifend mi in nulla posuere sollicitudin aliquam
-                    ultrices sagittis orci. Dignissim enim sit amet venenatis
-                    urna cursus eget. Habitant morbi tristique senectus et netus
-                    et malesuada fames ac. Tristique senectus et netus et
-                    malesuada fames ac turpis egestas maecenas.
-                  </p>
+                  
 
-                  <p>
-                    Pharetra et ultrices neque ornare aenean euismod elementum
-                    nisi quis. Volutpat lacus laoreet non curabitur gravida
-                    arcu. Vitae congue mauris rhoncus aenean vel elit.
-                  </p>
+
                 </div>
               </div>
 
               {/* Right Side - Image */}
               <div className="flex justify-center">
-                <div className="w-full max-w-md h-80 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <div className="text-center text-gray-400">
-                    <div className="w-16 h-16 bg-gray-300 rounded-lg mx-auto mb-4 flex items-center justify-center">
-                      <svg
-                        className="w-8 h-8"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
-                      </svg>
-                    </div>
-                    <p className="text-sm">Company Image</p>
-                  </div>
-                </div>
+                <img src={aboutHeroImg} alt="hero image"/>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Team Section */}
-        <section className="py-20 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-6">
+        {/* Mission Section */}
+        <section className="py-[4vw] px-[6vw] md:py-[5.83vw] md:px-[8.33vw] bg-whiwte">
+          <div className="mx-auto">
             <div className="text-left mb-16">
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
                 Introduce your team

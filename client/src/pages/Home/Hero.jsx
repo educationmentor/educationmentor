@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import HeroImage from '../assets/images/hero1.png';
-import avatar1 from '../assets/images/avatar1.png';
-import avatar2 from '../assets/images/avatar2.png';
-import avatar3 from '../assets/images/avatar3.png';
-import avatar4 from '../assets/images/avatar4.png';
-import ConsultationForm from '../components/ConsultationForm';
-import seacrh from '../assets/images/search.png';
-import Vector from '../assets/images/Vector.png';
+import HeroImage from '../../assets/images/home/hero1.png';
+import avatar1 from '../../assets/images/home/avatar1.png';
+import avatar2 from '../../assets/images/home/avatar2.png';
+import avatar3 from '../../assets/images/home/avatar3.png';
+import avatar4 from '../../assets/images/home/avatar4.png';
+import ConsultationForm from '../../components/ConsultationForm';
+import seacrh from '../../assets/images/home/search.png';
+import Vector from '../../assets/images/home/Vector.png';
 
 const Hero = () => {
   const [showConsultationForm, setShowConsultationForm] = useState(false);
