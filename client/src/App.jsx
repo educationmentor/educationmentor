@@ -8,6 +8,7 @@ import USA from './pages/Destinations/study-in-usa';
 import Footer from "./components/Footer";
 import GetStarted from './components/GetStarted';
 import ContactUs from './pages/Contact-us';
+import Blogs from './pages/Blogs';
 
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/study-in-usa" element={<USA />} />
           <Route path="/contact-us" element={<ContactUs />} />
+          <Route path="/blogs" element={<Blogs />} />
         </Routes>
         <GetStarted/>
         <Footer />

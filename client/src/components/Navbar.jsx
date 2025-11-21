@@ -39,7 +39,6 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              to="/signup"
               className="bg-purple-200 text-purple-700 px-6 py-2 rounded-full font-medium hover:bg-purple-300 transition"
             >
               Sign Up

@@ -96,7 +96,7 @@ const Hero = () => {
             <img 
               src={HeroImage}
               alt="Students with global education background" 
-             className="w-[90%] max-w-lg h-48 xs:h-56 sm:h-96 md:h-[32rem] lg:h-[34rem] bg-white object-cover"
+             className="w-[90%] max-w-lg h-48 xs:h-56 sm:h-96 md:h-[32rem] lg:h-[34rem] rounded-full  bg-white object-cover"
 
             />
           </div>

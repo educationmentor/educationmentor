@@ -228,10 +228,12 @@ const About = () => {
         </section>
 
         {/* Locations Section */}
-        <section className="py-20 bg-gray-50">
+        {/* <section className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-              {/* Left Side - Locations List */}
+              
+              
+
               <div>
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-8">
                   Our locations
@@ -245,7 +247,7 @@ const About = () => {
                 </div>
               </div>
 
-              {/* Right Side - Map */}
+              
               <div className="flex items-center justify-center">
                 <div className="w-full h-96 bg-gray-200 rounded-lg flex items-center justify-center">
                   <div className="text-center text-gray-400">
@@ -264,7 +266,7 @@ const About = () => {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
       </div>
       <GetStarted />
       <Footer />
