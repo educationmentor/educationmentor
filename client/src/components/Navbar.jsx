@@ -33,7 +33,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link to="/contact" className="hover:text-purple-600">
+            <Link to="/contact-us" className="hover:text-purple-600">
               Contact Us
             </Link>
           </li>

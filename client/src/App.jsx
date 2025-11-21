@@ -7,6 +7,7 @@ import About from './pages/About';
 import USA from './pages/Destinations/study-in-usa';
 import Footer from "./components/Footer";
 import GetStarted from './components/GetStarted';
+import ContactUs from './pages/Contact-us';
 
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/study-in-usa" element={<USA />} />
+          <Route path="/contact-us" element={<ContactUs />} />
         </Routes>
         <GetStarted/>
         <Footer />

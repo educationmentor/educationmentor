@@ -1,8 +1,8 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
-@theme {
+:root {
   --font-size-testimonial: clamp(42px, 5.5vw, 90px);
   --font-size-h0Text: clamp(36px, 4vw, 80px);
   --font-size-h1Text: clamp(32px, 3.5vw, 72px);
@@ -27,6 +27,11 @@
   --font-size-smallTextPhone: clamp(10px, 3.5vw, 16px);
   --font-size-tinyTextPhone: clamp(8px, 3vw, 14px);
   
+  --color-orangeChosen: #290572;
+  --color-linenChosen: #F6F1FF;
+}
+
+@theme {
   --color-orangeChosen: #290572;
   --color-linenChosen: #F6F1FF;
 }
@@ -66,7 +71,7 @@
 .border-linenChosen { border-color: var(--color-linenChosen); }
 
 body, html, #root {
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Roboto', sans-serif;
 }
 
 
