@@ -50,7 +50,7 @@ const GetStarted = () => {
           <img
             src={image6}
             alt="Confident woman ready to pursue her dreams"
-            className="hidden md:absolute mx-auto md:right-[2vw] lg:right-[6vw] bottom-0 w-80 md:w-[250px] lg:w-[280px] h-auto object-contain z-20"
+            className="hidden md:block md:absolute mx-auto md:right-[2vw] lg:right-[6vw] bottom-0 w-80 md:w-[250px] lg:w-[280px] h-auto object-contain z-20"
             style={{ maxHeight: "1080px" }}
           />
         </div>
