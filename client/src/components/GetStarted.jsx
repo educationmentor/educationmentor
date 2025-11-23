@@ -1,4 +1,4 @@
-import image6 from "../assets/images/image6.png";
+import image6 from "../assets/images/getStartedImg.png";
 import { FaArrowRightLong } from "react-icons/fa6";
 import React, { useState,useEffect } from "react";
 import ConsultationForm from "./ConsultationForm";
@@ -23,20 +23,20 @@ const GetStarted = () => {
       <div className="absolute bottom-10 left-10 w-20 h-20 bg-blue-200 rounded-full opacity-30"></div>
 
       {/* Big parent div recreated */}
-      <div className="max-w-7xl mx-auto rounded-2xl  bg-[#eae7e3]">
+      <div className="relative mx-[8.33vw] rounded-2xl  bg-[#eae7e3]">
         {/* Flex container for main content */}
         <div className="md:flex grid items-center ">
           {/* Main box */}
-          <div className="rounded-2xl w-full flex items-center px-10 py-12 min-h-[20rem] z-10">
+          <div className="rounded-2xl w-full flex items-center font-poppins  px-10 py-12 min-h-[20rem] z-10 md:max-w-[420px] lg:max-w-[590px]">
             {/* Text and button */}
             <div className="max-w-lg">
-              <h2 className="text-3xl md:text-4xl font-extrabold text-[#181c4b] mb-2 leading-tight">
+              <h2 className="text-h4TextPhone md:text-h4Text font-bold text-[#060C61] mb-2  leading-[120%]">
                 Are you ready to fly &<br />
-                <span className="text-[#23236c] font-medium">
+                <span className="text-h5TextPhone md:text-h5Text text-[#060C61] leading-[120%] font-normal">
                   pursue your dreams?
                 </span>
               </h2>
-              <p className="text-base md:text-lg  text-[#555] mb-7 mt-2">
+              <p className="text-smallTextPhone md:text-regularText  text-[#555] mb-7 mt-2">
                 Your journey to world-class education starts here. Let our
                 mentors help you unlock opportunities and shape your future.
               </p>
@@ -50,11 +50,11 @@ const GetStarted = () => {
           <img
             src={image6}
             alt="Confident woman ready to pursue her dreams"
-            className="md:absolute mx-auto md:right-50 md:bottom-20 w-80 md:w-96 h-150 object-cover z-20"
+            className="hidden md:absolute mx-auto md:right-[2vw] lg:right-[6vw] bottom-0 w-80 md:w-[250px] lg:w-[280px] h-auto object-contain z-20"
             style={{ maxHeight: "1080px" }}
           />
         </div>
-      </div>
+      </div>  
       {showConsultationForm && (
         <div className="fixed top-0 left-0 w-full h-screen  bg-opacity-50 
                        flex items-center justify-center z-50 

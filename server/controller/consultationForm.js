@@ -1,4 +1,5 @@
 import ConsultationForm from "../models/consultationForm.js";
+import ContactUsForm from '../models/contactUsForm.js'
 import asyncHandler from "express-async-handler";
 import { sendConsultationNotification, sendClientConfirmation } from "../services/emailService.js";
 import googleSheetsService from "../services/googleSheetsService.js";
@@ -85,6 +86,94 @@ const createConsultationRequest = asyncHandler(async (req, res) => {
     }
 });
 
+const createContactUsRequest = asyncHandler(async (req, res) => {
+    try {
+        const { firstName,lastName, email, phoneNumber, state,city,interest,message,agreeToContact } = req.body;
+        const name=firstName+' ' + lastName
+    // Validate required fields
+        if (!name || !email || !phoneNumber || !interest) {
+            return res.status(400).json({
+                success: false,
+                message: 'All fields are required'
+            });
+        }
+
+        // Create consultation request
+        const request = await ContactUsForm.create({
+            firstName,
+            lastName,
+            email,
+            phoneNumber,
+            state,
+            city,
+            interest,
+            message,
+            agreeToContact,
+        });
+
+        // Send email notifications
+        try {
+            // Send notification to admin
+            const adminEmailResult = await sendConsultationNotification({
+                name,
+                email,
+                phoneNumber,
+                interest
+            });
+
+            // Send confirmation to client
+            const clientEmailResult = await sendClientConfirmation({
+                name,
+                email,
+                phoneNumber,
+                interest
+            });
+
+            console.log('Email notifications sent:', {
+                admin: adminEmailResult.success,
+                client: clientEmailResult.success
+            });
+            
+        } catch (emailError) {
+            console.error('Email sending failed:', emailError);
+            // Don't fail the request if email fails
+        }
+
+        // Save to Google Sheets (separate try-catch to ensure it doesn't interfere with email)
+        try {
+            const sheetsResult = await googleSheetsService.addConsultationEntry({
+                name,
+                email,
+                phoneNumber,
+                interest
+            });
+
+            console.log('Google Sheets update:', {
+                success: sheetsResult.success,
+                error: sheetsResult.error
+            });
+            
+        } catch (sheetsError) {
+            console.error('Google Sheets update failed:', sheetsError);
+            // Don't fail the request if Google Sheets fails
+        }
+
+        res.status(201).json({
+            success: true,
+            message: 'Consultation request created successfully. You will receive a confirmation email shortly.',
+            data: request
+        });
+    } catch (error) {
+        console.error('Error creating consultation request:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Error creating consultation request',
+            error: error.message
+            // error: error.message0
+        });
+    }
+});
+
 // Test Google Sheets connection
 const testGoogleSheetsConnection = asyncHandler(async (req, res) => {
     try {
@@ -141,4 +230,4 @@ const setupGoogleSheetsHeaders = asyncHandler(async (req, res) => {
     }
 });
 
-export { createConsultationRequest, testGoogleSheetsConnection, setupGoogleSheetsHeaders };
+export { createConsultationRequest, testGoogleSheetsConnection, setupGoogleSheetsHeaders, createContactUsRequest };

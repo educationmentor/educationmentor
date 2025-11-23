@@ -1,4 +1,5 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
@@ -27,39 +28,63 @@
   --font-size-smallTextPhone: clamp(10px, 3.5vw, 16px);
   --font-size-tinyTextPhone: clamp(8px, 3vw, 14px);
   
-  --color-orangeChosen: #290572;
-  --color-linenChosen: #F6F1FF;
-}
-
-@theme {
+  --font-family-roboto: 'Roboto', sans-serif;
+  --font-family-poppins: 'Poppins', sans-serif;
+  
   --color-orangeChosen: #290572;
   --color-linenChosen: #F6F1FF;
 }
 
 /* Custom utility classes for the font sizes */
-.text-testimonial { font-size: var(--font-size-testimonial); }
-.text-h0Text { font-size: var(--font-size-h0Text); }
-.text-h1Text { font-size: var(--font-size-h1Text); }
-.text-h2Text { font-size: var(--font-size-h2Text); }
-.text-h3Text { font-size: var(--font-size-h3Text); }
-.text-h4Text { font-size: var(--font-size-h4Text); }
-.text-h5Text { font-size: var(--font-size-h5Text); }
-.text-h6Text { font-size: var(--font-size-h6Text); }
-.text-mediumText { font-size: var(--font-size-mediumText); }
-.text-regularText { font-size: var(--font-size-regularText); }
-.text-smallText { font-size: var(--font-size-smallText); }
-.text-tinyText { font-size: var(--font-size-tinyText); }
-.text-h0TextPhone { font-size: var(--font-size-h0TextPhone); }
-.text-h1TextPhone { font-size: var(--font-size-h1TextPhone); }
-.text-h2TextPhone { font-size: var(--font-size-h2TextPhone); }
-.text-h3TextPhone { font-size: var(--font-size-h3TextPhone); }
-.text-h4TextPhone { font-size: var(--font-size-h4TextPhone); }
-.text-h5TextPhone { font-size: var(--font-size-h5TextPhone); }
-.text-h6TextPhone { font-size: var(--font-size-h6TextPhone); }
-.text-mediumTextPhone { font-size: var(--font-size-mediumTextPhone); }
-.text-regularTextPhone { font-size: var(--font-size-regularTextPhone); }
-.text-smallTextPhone { font-size: var(--font-size-smallTextPhone); }
-.text-tinyTextPhone { font-size: var(--font-size-tinyTextPhone); }
+@layer utilities {
+  .text-testimonial { font-size: var(--font-size-testimonial); }
+  .text-h0Text { font-size: var(--font-size-h0Text); }
+  .text-h1Text { font-size: var(--font-size-h1Text); }
+  .text-h2Text { font-size: var(--font-size-h2Text); }
+  .text-h3Text { font-size: var(--font-size-h3Text); }
+  .text-h4Text { font-size: var(--font-size-h4Text); }
+  .text-h5Text { font-size: var(--font-size-h5Text); }
+  .text-h6Text { font-size: var(--font-size-h6Text); }
+  .text-mediumText { font-size: var(--font-size-mediumText); }
+  .text-regularText { font-size: var(--font-size-regularText); }
+  .text-smallText { font-size: var(--font-size-smallText); }
+  .text-tinyText { font-size: var(--font-size-tinyText); }
+  .text-h0TextPhone { font-size: var(--font-size-h0TextPhone); }
+  .text-h1TextPhone { font-size: var(--font-size-h1TextPhone); }
+  .text-h2TextPhone { font-size: var(--font-size-h2TextPhone); }
+  .text-h3TextPhone { font-size: var(--font-size-h3TextPhone); }
+  .text-h4TextPhone { font-size: var(--font-size-h4TextPhone); }
+  .text-h5TextPhone { font-size: var(--font-size-h5TextPhone); }
+  .text-h6TextPhone { font-size: var(--font-size-h6TextPhone); }
+  .text-mediumTextPhone { font-size: var(--font-size-mediumTextPhone); }
+  .text-regularTextPhone { font-size: var(--font-size-regularTextPhone); }
+  .text-smallTextPhone { font-size: var(--font-size-smallTextPhone); }
+  .text-tinyTextPhone { font-size: var(--font-size-tinyTextPhone); }
+  
+  /* Responsive variants - Tailwind v4 should generate these, but adding explicit media queries as fallback */
+  @media (min-width: 768px) {
+    /* Using escaped colon for Tailwind variant syntax */
+    @supports selector(.md\:test) {
+      .md\:text-h0Text { font-size: var(--font-size-h0Text); }
+      .md\:text-h1Text { font-size: var(--font-size-h1Text); }
+      .md\:text-h2Text { font-size: var(--font-size-h2Text); }
+      .md\:text-h3Text { font-size: var(--font-size-h3Text); }
+      .md\:text-h4Text { font-size: var(--font-size-h4Text); }
+      .md\:text-h5Text { font-size: var(--font-size-h5Text); }
+      .md\:text-h6Text { font-size: var(--font-size-h6Text); }
+      .md\:text-mediumText { font-size: var(--font-size-mediumText); }
+      .md\:text-regularText { font-size: var(--font-size-regularText); }
+      .md\:text-smallText { font-size: var(--font-size-smallText); }
+      .md\:text-tinyText { font-size: var(--font-size-tinyText); }
+    }
+  }
+}
+
+/* Custom utility classes for font families */
+@layer utilities {
+  .font-roboto { font-family: var(--font-family-roboto); }
+  .font-poppins { font-family: var(--font-family-poppins); }
+}
 
 /* Custom utility classes for colors */
 .text-orangeChosen { color: var(--color-orangeChosen); }
@@ -71,7 +96,7 @@
 .border-linenChosen { border-color: var(--color-linenChosen); }
 
 body, html, #root {
-	font-family: 'Roboto', sans-serif;
+	font-family: var(--font-family-roboto);
 }
 
 
