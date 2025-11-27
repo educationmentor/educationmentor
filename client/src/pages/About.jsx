@@ -268,8 +268,6 @@ const About = () => {
           </div>
         </section> */}
       </div>
-      <GetStarted />
-      <Footer />
     </>
   );
 };

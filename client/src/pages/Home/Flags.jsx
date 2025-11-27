@@ -66,7 +66,7 @@ const Flags = () => {
         {/* Scrolling Container */}
         <div className="relative">
           <div className="flex animate-scroll space-x-8"
-            style={{ transform: `translateX(-${flags.length * 6}rem)` }} // shift initial scroll position
+            style={{ transform: `translateX(-${flags.length-100}rem)` }} // shift initial scroll position
           >
             {duplicatedFlags.map((flag, index) => (
               <div

@@ -1,6 +1,7 @@
 import React from "react";
 import image4 from "../../assets/images/home/image4.png";
 import teamDiscussionImg from "../../assets/images/home/image5.png";
+import usaImg from '../../assets/images/thumbnail/usa.png'
 import { Link } from "react-router-dom";
 
 const RecentArticle = () => {
@@ -9,34 +10,24 @@ const RecentArticle = () => {
       id: 1,
       title: "Top 5 Mistakes Students Make in University Applications",
       excerpt: "Admissions Students Make and How to Avoid Them",
-      author: "Full name",
-      date: "11 Jan 2022",
+      author: "Kunal Chauhan Sir",
+      date: "20 Nov 2025",
       image: "business-meeting",
       hasImage: true,
+      href:''
     },
     {
       id: 2,
-      title: "Blog title heading will go here",
+      title: "Study in USA",
       excerpt:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
-      author: "Full name",
-      date: "12 Jan 2022",
-      image: "team-discussion",
+        "The United States is the world’s most sought-after study destination—home to elite research universities, flexible curricula, and powerful industry linkages.",
+      author: "Karishma Mam",
+      date: "22 Nov 2025",
+      image: "",
       hasImage: true,
+      href:'/'
     },
-    {
-      id: 3,
-      title: "Blog title heading will go here",
-      date: "11 Jan 2022",
-      hasImage: false,
-    },
-    {
-      id: 4,
-      title: "Blog title heading will go here",
-      author: "Full name",
-      date: "11 Jan 2022",
-      hasImage: false,
-    },
+
   ];
 
   return (
@@ -100,9 +91,9 @@ const RecentArticle = () => {
           <div className="lg:col-span-2 bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
             <div className="h-95 w-full flex items-center justify-center overflow-hidden relative">
               <img
-                src={teamDiscussionImg}
+                src={usaImg}
                 alt="Team Discussion"
-                className="absolute inset-0 w-full h-full object-cover"
+                className="absolute inset-0 object-cover h-full"
               />
             </div>
             <div className="p-6">

@@ -3,7 +3,7 @@ import image1 from "../../assets/images/home/image1.png";
 import smile from "../../assets/images/home/Smile.png";
 import home from "../../assets/images/home/home.png";
 import ornament from "../../assets/images/home/ornament.jpg";
-
+import scholarship from '../../assets/images/home/scholarship.png'
 const CareerCounselling = () => {
   return (
     <section className="py-10 sm:py-16 md:py-20 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
@@ -46,7 +46,7 @@ const CareerCounselling = () => {
               <div className="flex items-center justify-center mr-3">
                 <div className="w-12 h-12 sm:w-14 sm:h-14 bg-red-200 rounded-full flex items-center justify-center">
                   <img
-                    src={home}
+                    src={scholarship}
                     alt="Accommodation Icon"
                     className="w-12 h-12 sm:w-14 sm:h-14 object-contain"
                   />
@@ -54,10 +54,10 @@ const CareerCounselling = () => {
               </div>
               <div>
                 <h4 className="font-semibold text-gray-800 text-xs sm:text-sm">
-                  Accommodation
+                  Scholarship Suppport
                 </h4>
                 <p className="text-[10px] sm:text-xs text-gray-600">
-                  The educational mentor will help you with accommodation
+                  The educational mentor will help you with scholarship
                 </p>
               </div>
             </div>
