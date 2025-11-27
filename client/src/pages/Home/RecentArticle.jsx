@@ -2,6 +2,7 @@ import React from "react";
 import image4 from "../../assets/images/home/image4.png";
 import teamDiscussionImg from "../../assets/images/home/image5.png";
 import usaImg from '../../assets/images/thumbnail/usa.png'
+import article1Placeholder from '../../assets/images/home/articlePlaceholder.png'
 import { Link } from "react-router-dom";
 
 const RecentArticle = () => {
@@ -25,7 +26,7 @@ const RecentArticle = () => {
       date: "22 Nov 2025",
       image: "",
       hasImage: true,
-      href:'/'
+      href:'/study-in-usa'
     },
 
   ];
@@ -89,11 +90,13 @@ const RecentArticle = () => {
 
           {/* Second featured article - spans 2 columns */}
           <div className="lg:col-span-2 bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+          <Link to={articles[1].href}>
+
             <div className="h-95 w-full flex items-center justify-center overflow-hidden relative">
               <img
-                src={usaImg}
+                src={article1Placeholder}
                 alt="Team Discussion"
-                className="absolute inset-0 object-cover h-full"
+                className="absolute inset-0 w-full h-full"
               />
             </div>
             <div className="p-6">
@@ -109,6 +112,8 @@ const RecentArticle = () => {
                 <span>{articles[1].date}</span>
               </div>
             </div>
+          </Link>
+
           </div>
         </div>
       </div>
