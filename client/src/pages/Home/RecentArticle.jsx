@@ -52,14 +52,7 @@ const RecentArticle = () => {
             trends in higher education, career guidance, and global
             opportunities.
           </p>
-          <div className="mt-8 flex justify-center">
-            <Link
-              to="/study-in-usa"
-              className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-full transition"
-            >
-              Explore Study in USA Guide
-            </Link>
-          </div>
+          
         </div>
 
         {/* Articles Grid */}
