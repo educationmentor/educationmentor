@@ -17,7 +17,7 @@ const About = () => {
     <>
       <div className="min-h-screen bg-white">
         {/* Hero Section */}
-        <section className="py-[4vw] px-[6vw] md:py-[5.83vw] md:px-[3.33vw] bg-cover bg-center flex flex-col justify-center mt-[15vw] md:mt-[4vw]" style={{backgroundImage: `url(${aboutHeaderImg})`}}>
+        <section className="py-[4vw] px-[6vw] md:py-[5.83vw] md:px-[3.33vw] bg-cover bg-center flex flex-col justify-center " style={{backgroundImage: `url(${aboutHeaderImg})`}}>
             <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-[1.5vw] text-center">
             Believing in Accessible Global Education
             </h1>
@@ -36,7 +36,7 @@ const About = () => {
                   Our Story: Who We Are
                 </h2>
 
-                <div className="space-y-4 text-sm md:text-lg lg:text-xl leading-normal">
+                <div className="space-y-4 text-sm md:text-lg lg:text-xl leading-normal text-black">
                   <p>
                     Educational Mentor was founded by a team of international educators and alumni who saw a gap in the market: high-quality, end-to-end study abroad guidance was a luxury few could afford, and clear information about different countries was hard to find.
                   </p>

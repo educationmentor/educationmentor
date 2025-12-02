@@ -53,7 +53,7 @@ const categoriesMap = {viewAll:"View all", Destination:"Destinations", universit
           });
     
       return (
-          <div className="mx-[12px] sm:mx-[16px] md:mx-[32px] lg:mx-[64px] my-[60px] lg:my-[80px] xl:my-[120px]">
+          <div className="mx-[12px] sm:mx-[16px] md:mx-[32px] lg:mx-[64px] my-[60px] lg:my-[80px] xl:my-[120px]  ">
               <span className="flex justify-center  font-semibold text-[16px] md:text-[18px] lg:text-[20px] ">Blogs</span>
           <h2 className='mt-[8px]  lg:mt-[8px] text-buttonpurple  mb-[8px] md:mb-[16px]   flex justify-center font-bold text-[24px] md:text-[56px]' >Learning Section</h2>
           <span className='flex justify-center text-[12px] md:text-[18px] mb-[4vw]' >Educate yourself to make right career choices  </span>

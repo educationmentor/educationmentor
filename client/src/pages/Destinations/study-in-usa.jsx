@@ -150,7 +150,7 @@ const eligibilityData = {
 const USA = () => {
   return (
     <div className="pb-10">
-        <div className="px-[6vw] md:w-[73.125vw] flex flex-col gap-[5vw] mb-[1vw] py-[4vw] items-center md:mx-auto">
+        <div className="px-[6vw] md:w-[73.125vw] flex flex-col gap-[5vw] mb-[1vw] py-[4vw] md:py-[5.83vw] items-center md:mx-auto">
                 <div className="flex flex-col items-center gap-[2vw] md:gap-[2vw]">
                 <div className="flex flex-col items-center gap-[4vw] md:gap-[1vw]">
                     <Breadcrumbs/>

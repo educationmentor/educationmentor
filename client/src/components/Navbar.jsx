@@ -1,13 +1,16 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react"; // lightweight icons
 import logo from '../assets/images/logo.png';  
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-
+  const location = useLocation();
+  const pathname = location.pathname;
+  const pathSegments = pathname.split("/").filter(segment => segment);
+  console.log(pathname);
   return (
-    <nav className="w-full bg-white  fixed top-0 left-0 z-50">
+    <nav className={`w-full bg-white  ${pathname=='/'  ? "fixed" : ""} top-0 left-0 z-50`}>
       <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
         {/* Logo / Brand */}
         <div className="text-lg font-bold text-gray-800">
