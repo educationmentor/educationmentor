@@ -1,0 +1,192 @@
+import React from "react";
+
+const GermanyUniversityTable = ({ id, content, section2 = "" }) => {
+  const sections = ["highlight"];
+  const bool = sections.includes(section2);
+
+  return (
+    <div
+      id={id}
+      className="flex flex-col mx-[6vw] md:mx-[12.5vw] gap-[2vw] mb-[10vw] md:mb-[4vw]"
+    >
+      {/* Title Section */}
+      <div className="flex flex-col gap-[1.5vw]">
+        <h3 className="text-h5TextPhone md:text-h3Text font-bold text-center leading-[120%]">
+          {content.title}
+        </h3>
+
+        <h5
+          className={` text-regularTextPhone md:text-h5Text font-bold opacity-80`}
+        >
+          {content.subTitle}
+        </h5>
+      </div>
+
+      {/* Table Section */}
+      <div className="flex overflow-x-auto no-scrollbar">
+        <table className="w-full border-collapse border border-black ">
+          <thead>
+            <tr className="bg-linenChosen  text-regularTextPhone md:text-mediumText text-center">
+              {content.data[0].map((header, index) => (
+                <th
+                  key={index}
+                  className="min-w-[200px] border font-semibold border-black  px-[0.75vw] py-[0.625vw]"
+                >
+                  {header}
+                </th>
+              ))}
+            </tr>
+          </thead>
+
+          <tbody className="text-smallTextPhone md:text-regularText align-top">
+            {content.data.slice(1).map((row, i) => {
+              const width = row.length;
+              return (
+                <tr key={i}>
+                  {row.map((cell, index) => (
+                    <td
+                      key={index}
+                      className={`border  border-black  px-[0.75vw] py-[0.625vw] ${
+                        index === 0 ? "font-semibold" : ""
+                      } ${bool && index === 0 ? "bg-linenChosen" : ""}`}
+                      style={{ width: `${100 / width}%` }} // Fixed dynamic width
+                    >
+                      {content.href && index === 0 ? (
+                        <a
+                          href={Array.isArray(content.href) ? content.href[i] : content.href}
+                          className="hover:underline text-blue-600"
+                        >
+                          {cell}
+                        </a>
+                      ) : (
+                        cell
+                      )}
+                    </td>
+                  ))}
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+
+      {/* Title Section */}
+      <div className="flex flex-col gap-[1.5vw]">
+        <h5
+          className={` text-regularTextPhone md:text-h5Text font-bold opacity-80`}
+        >
+          {content.subTitle2}
+        </h5>
+      </div>
+
+      {/* Table Section */}
+      <div className="flex overflow-x-auto no-scrollbar">
+        <table className="w-full border-collapse border border-black ">
+          <thead>
+            <tr className="bg-linenChosen  text-regularTextPhone md:text-mediumText text-center">
+              {content.data2[0].map((header, index) => (
+                <th
+                  key={index}
+                  className="min-w-[200px] border font-semibold border-black  px-[0.75vw] py-[0.625vw]"
+                >
+                  {header}
+                </th>
+              ))}
+            </tr>
+          </thead>
+
+          <tbody className="text-smallTextPhone md:text-regularText align-top">
+            {content.data2.slice(1).map((row, i) => {
+              const width = row.length;
+              return (
+                <tr key={i}>
+                  {row.map((cell, index) => (
+                    <td
+                      key={index}
+                      className={`border  border-black  px-[0.75vw] py-[0.625vw] ${
+                        index === 0 ? "font-semibold" : ""
+                      } ${bool && index === 0 ? "bg-linenChosen" : ""}`}
+                      style={{ width: `${100 / width}%` }} // Fixed dynamic width
+                    >
+                      {content.href && index === 0 ? (
+                        <a
+                          href={Array.isArray(content.href) ? content.href[i] : content.href}
+                          className="hover:underline text-blue-600"
+                        >
+                          {cell}
+                        </a>
+                      ) : (
+                        cell
+                      )}
+                    </td>
+                  ))}
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+
+      {/* Title Section */}
+      {content.subTitle3 && <div className="flex flex-col gap-[1.5vw]">
+        <h5
+          className={` text-regularTextPhone md:text-h5Text font-bold opacity-80`}
+        >
+          {content.subTitle3}
+        </h5>
+      </div>}
+
+      {/* Table Section */}
+      {content.data3 &&
+      <div className="flex overflow-x-auto no-scrollbar">
+        <table className="w-full border-collapse border border-black ">
+          <thead>
+            <tr className="bg-linenChosen  text-regularTextPhone md:text-mediumText text-center">
+              {content.data3[0].map((header, index) => (
+                <th
+                  key={index}
+                  className="min-w-[200px] border font-semibold border-black  px-[0.75vw] py-[0.625vw]"
+                >
+                  {header}
+                </th>
+              ))}
+            </tr>
+          </thead>
+
+          <tbody className="text-smallTextPhone md:text-regularText align-top">
+            {content.data3.slice(1).map((row, i) => {
+              const width = row.length;
+              return (
+                <tr key={i}>
+                  {row.map((cell, index) => (
+                    <td
+                      key={index}
+                      className={`border  border-black  px-[0.75vw] py-[0.625vw] ${
+                        index === 0 ? "font-semibold" : ""
+                      } ${bool && index === 0 ? "bg-linenChosen" : ""}`}
+                      style={{ width: `${100 / width}%` }} // Fixed dynamic width
+                    >
+                      {content.href && index === 0 ? (
+                        <a
+                          href={Array.isArray(content.href) ? content.href[i] : content.href}
+                          className="hover:underline text-blue-600"
+                        >
+                          {cell}
+                        </a>
+                      ) : (
+                        cell
+                      )}
+                    </td>
+                  ))}
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+      }
+    </div>
+  );
+};
+
+export default GermanyUniversityTable;

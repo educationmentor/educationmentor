@@ -15,6 +15,7 @@ const Breadcrumbs = () => {
     contact: "Contact Us",
     admin: "Admin",
     "study-in-usa":'Study in USA',
+    "study-in-germany":'Study in Germany',
   };
 
   return (
