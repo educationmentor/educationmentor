@@ -62,7 +62,9 @@ app.use(cors({
     'http://localhost:3000',
     'https://educationalmentor.com',
     'https://www.educationalmentor.com',
-    'https://educationmentor-w1dk.vercel.app'
+    'https://educationmentor-w1dk.vercel.app',
+    'https://www.educationsaathi.in',
+    'https://educationsaathi.in'
   ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
