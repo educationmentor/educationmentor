@@ -1,5 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import dns from "dns";
 dotenv.config();
 
 import cors from 'cors';
@@ -18,6 +19,7 @@ import consultationRoutes from './routes/consultationForm.js';
 
 
 const app = express();
+dns.setServers(["8.8.8.8", "1.1.1.1"]);
 
 // Connect to database with retry mechanism
 const initializeDatabase = async (retries = 3) => {

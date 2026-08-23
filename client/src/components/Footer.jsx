@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Left Section - Brand */}
           <div className="space-y-6">
             <h3 className="text-xl font-bold text-gray-900">
-              The educational mentor
+              The Education Saathi
             </h3>
             <p className="text-gray-600 leading-relaxed">
               Empowering students to achieve global careers through mentorship, counselling, and real-world guidance.
@@ -47,7 +47,7 @@ const Footer = () => {
           {/* Center Section - Navigation */}
           <div className="space-y-6">
             <h3 className="text-lg font-semibold text-gray-900">
-              Column One
+              {/* Column One */}
             </h3>
             <ul className="space-y-3">
               <li>
@@ -120,7 +120,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm text-gray-600">
-              © 2024 Educational Mentor. All rights reserved.
+              © 2024 Education Saathi. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
               <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">

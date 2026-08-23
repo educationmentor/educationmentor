@@ -50,7 +50,7 @@ const ContactUs = () => {
     e.preventDefault();
     
     if (!formData.agreeToContact) {
-      toast.error('Please agree to be contacted by the Educational Mentor team');
+      toast.error('Please agree to be contacted by the Education Saathi team');
       return;
     }
 
@@ -335,7 +335,7 @@ const ContactUs = () => {
                 className='mt-1 mr-2 text-purple-600 focus:ring-purple-500'
               />
               <span className='text-sm text-gray-700'>
-                I agree to be contacted by the Educational Mentor team regarding my query or enrollment.
+                I agree to be contacted by the Education Saathi team regarding my query or enrollment.
               </span>
             </label>
           </div>

@@ -57,7 +57,7 @@ const CareerCounselling = () => {
                   Scholarship Suppport
                 </h4>
                 <p className="text-[10px] sm:text-xs text-gray-600">
-                  The educational mentor will help you with scholarship
+                  The education saathi will help you with scholarship
                 </p>
               </div>
             </div>

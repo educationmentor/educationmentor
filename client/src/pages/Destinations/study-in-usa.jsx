@@ -169,7 +169,7 @@ const USA = () => {
             <br/>From Ivy League campuses (Harvard, Princeton, Yale) to tech powerhouses (MIT, Stanford, UC Berkeley), the U.S. ecosystem blends world-class academics with internships, accelerators, and alumni networks that open doors globally.
             </p>
             <p className='font-bold'>
-            At Educational Mentor, we handhold you end-to-end—shortlisting, tests, essays, documentation, Form I-20/SEVIS, visa interview prep, pre-departure, and landing support.
+            At Education Saathi, we handhold you end-to-end—shortlisting, tests, essays, documentation, Form I-20/SEVIS, visa interview prep, pre-departure, and landing support.
             </p>
           </div>
       
@@ -330,12 +330,12 @@ const USA = () => {
       <section className='mx-[6vw] my-[4vw] md:my-[4vw] flex flex-col gap-[2vw] md:mx-[12.5vw]'>
         <div className='flex flex-col md:gap-[1.5vw]'>
           <h3 className='text-h4TextPhone md:text-h3Text font-bold leading-[120%]'>Free USA Guidance & Support</h3>
-          <p className='text-smallTextPhone md:text-regularText leading-[150%] font-bold'>From the moment you sign up, Educational Mentor covers counselling, shortlisting, test planning, SOP/LOR editing, documentation, visa prep, and pre-departure. Over a period of time, we have sent hundreds of students to the USA; many have secured OPT roles and converted to full-time offers.</p>
+          <p className='text-smallTextPhone md:text-regularText leading-[150%] font-bold'>From the moment you sign up, Education Saathi covers counselling, shortlisting, test planning, SOP/LOR editing, documentation, visa prep, and pre-departure. Over a period of time, we have sent hundreds of students to the USA; many have secured OPT roles and converted to full-time offers.</p>
         </div>
         <div className='flex flex-col md:flex-row md:gap-[1.5vw] items-center'>
-          <h3 className='text-h4TextPhone md:text-h3Text font-bold leading-[120%] text-orangeChosen'>Get in Touch with Educational Mentor Today!</h3>
+          <h3 className='text-h4TextPhone md:text-h3Text font-bold leading-[120%] text-orangeChosen'>Get in Touch with Education Saathi Today!</h3>
           <p className='text-smallTextPhone md:text-regularText leading-[150%] font-bold'>
-          <span className='text-[rgba(0,0,0,0.6)]'>Kickstart your U.S. education journey. Contact Educational Mentor for expert admissions and visa assistance.</span><br/>
+          <span className='text-[rgba(0,0,0,0.6)]'>Kickstart your U.S. education journey. Contact Education Saathi for expert admissions and visa assistance.</span><br/>
           Your dream university is one application away — let’s make it happen together!
           </p>
         </div>

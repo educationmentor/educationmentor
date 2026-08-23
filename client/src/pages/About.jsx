@@ -22,7 +22,7 @@ const About = () => {
             Believing in Accessible Global Education
             </h1>
             <p className="text-sm md:text-lg text-white leading-relaxed text-center max-w-4xl mx-auto">
-            At Educational Mentor, we are driven by a powerful belief: informed and affordable<br/> mentorship is the key to unlocking global education for every student.
+            At Education Saathi, we are driven by a powerful belief: informed and affordable<br/> mentorship is the key to unlocking global education for every student.
             </p>
         </section>
 
@@ -38,7 +38,7 @@ const About = () => {
 
                 <div className="space-y-4 text-sm md:text-lg lg:text-xl leading-normal text-black">
                   <p>
-                    Educational Mentor was founded by a team of international educators and alumni who saw a gap in the market: high-quality, end-to-end study abroad guidance was a luxury few could afford, and clear information about different countries was hard to find.
+                    Education Saathi was founded by a team of international educators and alumni who saw a gap in the market: high-quality, end-to-end study abroad guidance was a luxury few could afford, and clear information about different countries was hard to find.
                   </p>
 
                   <p>
