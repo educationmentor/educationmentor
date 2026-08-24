@@ -20,7 +20,7 @@ export const sendConsultationNotification = async (consultationData) => {
     
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: 'theeducationalmentor23399@gmail.com',
+      to: 'enquiry.educationsaathi@gmail.com',
       subject: 'New Consultation Request - Education Mentor',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">

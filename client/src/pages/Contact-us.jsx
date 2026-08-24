@@ -99,21 +99,35 @@ const ContactUs = () => {
 
         <div className='flex items-center gap-[2vw] md:gap-[.833vw]'>
           <img src={mailIcon} alt="mailIcon" className='w-[1.25] h-auto' />
-          <a href="mailto:educationalmentor@gmail.com">
-            <p className='text-smallTextPhone md:text-smallText'>educationalmentor@gmail.com</p>
+          <a href="mailto:enquiry.educationsaathi@gmail.com">
+            <p className='text-smallTextPhone md:text-smallText'>enquiry.educationsaathi@gmail.com</p>
           </a>
         </div>
         <div className='flex items-center gap-[2vw] md:gap-[.833vw]'>
-          <img src={callIcon} alt="callIcon" className='w-[1.25] h-auto' />
-          <a href="mailto:educationalmentor@gmail.com">
-            <p className='text-smallTextPhone md:text-smallText '>+91 88009 07657</p>
+          <img src={callIcon} alt="callIcon" className='w-[1.25] h-auto mb-auto' />
+          <div>
+          <a href="tel:+918800907657">
+            <p className='text-smallTextPhone md:text-smallText '>+91 8800907657 Head Office</p>
           </a>
+          <a href="tel:+918510010500">
+            <p className='text-smallTextPhone md:text-smallText '>+91 85100 10500 Guwahati Branch office</p>
+          </a>
+          <a href="tel:+917011043124">
+            <p className='text-smallTextPhone md:text-smallText '>+91 70110 43124 Noida Branch office</p>
+          </a>
+          </div>
         </div>
         <div className='flex items-start gap-[2vw] md:gap-[.833vw] md:w-[18vw]'>
           <img src={locationIcon} alt="locationIcon" className='w-[1.25] h-auto' />
-          <a href="mailto:educationalmentor@gmail.com">
-            <p className='text-smallTextPhone md:text-regularText '>J-65,gautam Nagar Behind, Deepak Laxmi Property, Gautam Nagar, South Delhi, New Delhi, Delhi, India, 110049.</p>
-          </a>
+          <div>
+          <a href="mailto:enquiry.educationsaathi@gmail.com">
+            <p className='text-smallTextPhone md:text-regularText '>Noida : Suite No.4, CoWorkZen, Tower B, 6th Floor, Bhutani Cyber Park, Sector 62, Noida - 201309</p></a><br/>
+            <a href="mailto:enquiry.educationsaathi@gmail.com">
+            <p className='text-smallTextPhone md:text-regularText '>Guwahati: 3rd Floor, 6, MS Road, Fancy Bazar, Guwahati - 781001</p> </a><br/>
+            <a href="mailto:enquiry.educationsaathi@gmail.com">
+            <p className='text-smallTextPhone md:text-regularText '>New Delhi - Head Office Pocket 111, 113, 115 1st Floor, Best Arcade Market, Canara Bank, Near K.M. Chowk, Sector-12 Dwarka, New Delhi - 110075</p>
+            </a><br/>
+          </div>
         </div>
         </div>
 
