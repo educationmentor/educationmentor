@@ -88,7 +88,7 @@ const Footer = () => {
                 <div>
                   <p className="text-gray-600">Noida : Suite No.4, CoWorkZen, Tower B, 6th Floor, Bhutani Cyber Park, Sector 62, Noida - 201309</p>
                   <p className="text-gray-600">Guwahati: 3rd Floor, 6, MS Road, Fancy Bazar, Guwahati - 781001</p>
-                  <p className="text-gray-600">New Delhi - Head Office Pocket 111, 113, 115 1st Floor, Best Arcade Market, Canara Bank, Near K.M. Chowk, Sector-12 Dwarka, New Delhi - 110075</p>
+                  <p className="text-gray-600">New delhi : 219 , 221 , 223 Second floor , Best Arcade Market , Above Canara Bank  , Near K.M. Chowk , Pocket 6, Sector 12 Dwarka - New Delhi - 110075</p>
                 </div>
               </div>
               

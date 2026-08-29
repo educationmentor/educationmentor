@@ -125,7 +125,7 @@ const ContactUs = () => {
             <a href="mailto:enquiry.educationsaathi@gmail.com">
             <p className='text-smallTextPhone md:text-regularText '>Guwahati: 3rd Floor, 6, MS Road, Fancy Bazar, Guwahati - 781001</p> </a><br/>
             <a href="mailto:enquiry.educationsaathi@gmail.com">
-            <p className='text-smallTextPhone md:text-regularText '>New Delhi - Head Office Pocket 111, 113, 115 1st Floor, Best Arcade Market, Canara Bank, Near K.M. Chowk, Sector-12 Dwarka, New Delhi - 110075</p>
+            <p className='text-smallTextPhone md:text-regularText '>New Delhi - 219 , 221 , 223 Second floor , Best Arcade Market , Above Canara Bank  , Near K.M. Chowk , Pocket 6, Sector 12 Dwarka ,  New Delhi - 110075</p>
             </a><br/>
           </div>
         </div>
