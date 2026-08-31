@@ -15,7 +15,7 @@ import { checkDatabaseConnection } from './middleware/dbCheck.js';
 // Import routes
 import authRoutes from './routes/auth.js';
 import consultationRoutes from './routes/consultationForm.js';
-import mbbsEnquiryRoutes from "./routes/MbbsEnquiry.js";
+import mbbsEnquiryRoutes from "./routes/MbbsEnquiryRoute.js";
 
 
 
@@ -149,7 +149,7 @@ app.use((err, req, res, next) => {
   });
 });
 
-const PORT = process.env.PORT || 5000 ;
+const PORT = process.env.PORT || 5000 ; 
 
 // Start server only after database connection is established
 const startServer = async () => {
