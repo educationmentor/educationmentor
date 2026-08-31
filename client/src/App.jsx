@@ -10,7 +10,7 @@ import GetStarted from './components/GetStarted';
 import ContactUs from './pages/Contact-us';
 import Blogs from './pages/Blogs';
 import StudyInGermany from './pages/Destinations/study-in-germany';
-
+import StudyMBBSIndia from './pages/Destinations/mbbs-in-india';
 
 const App = () => {
   return (
@@ -22,6 +22,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/study-in-usa" element={<USA />} />
+          <Route path="/mbbs-in-india" element={<StudyMBBSIndia />} />
           <Route path="/study-in-germany" element={<StudyInGermany />} />
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/blogs" element={<Blogs />} />
