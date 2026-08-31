@@ -15,6 +15,7 @@ import { checkDatabaseConnection } from './middleware/dbCheck.js';
 // Import routes
 import authRoutes from './routes/auth.js';
 import consultationRoutes from './routes/consultationForm.js';
+import mbbsEnquiryRoutes from "./routes/MbbsEnquiry.js";
 
 
 
@@ -110,7 +111,7 @@ app.use('/api', checkDatabaseConnection);
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/consultationForm', consultationRoutes);
-
+app.use('/api/enquiry', mbbsEnquiryRoutes);
 // Health check endpoint
 app.get('/api/health', (req, res) => {
   res.json({ 
