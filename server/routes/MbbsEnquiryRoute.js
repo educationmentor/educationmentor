@@ -1,4 +1,5 @@
 import express from "express";
+// @ts-ignore
 import { createMbbsEnquiry } from "../controller/MbbsEnquiry.js";
 
 const router = express.Router();
