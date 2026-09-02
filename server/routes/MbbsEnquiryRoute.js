@@ -1,10 +1,20 @@
 import express from "express";
-// @ts-ignore
-import { createMbbsEnquiry } from "../controller/MbbsEnquiry.js";
+import {
+  createMbbsIndiaEnquiry,
+  createMbbsNepalEnquiry,
+  createMbbsGeorgiaEnquiry,
+} from "../controller/MbbsEnquiry.js";
 
-const router = express.Router();
+const mbbsIndiaEnquiryRoutes = express.Router();
+const mbbsNepalEnquiryRoutes = express.Router();
+const mbbsGeorgiaEnquiryRoutes = express.Router();
 
-// POST /api/enquiry
-router.post("/", createMbbsEnquiry);
+mbbsIndiaEnquiryRoutes.post("/", createMbbsIndiaEnquiry);
+mbbsNepalEnquiryRoutes.post("/", createMbbsNepalEnquiry);
+mbbsGeorgiaEnquiryRoutes.post("/", createMbbsGeorgiaEnquiry);
 
-export default router;
+export {
+  mbbsIndiaEnquiryRoutes,
+  mbbsNepalEnquiryRoutes,
+  mbbsGeorgiaEnquiryRoutes,
+};

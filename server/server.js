@@ -15,7 +15,7 @@ import { checkDatabaseConnection } from './middleware/dbCheck.js';
 // Import routes
 import authRoutes from './routes/auth.js';
 import consultationRoutes from './routes/consultationForm.js';
-import mbbsEnquiryRoutes from "./routes/MbbsEnquiryRoute.js";
+import {mbbsIndiaEnquiryRoutes , mbbsNepalEnquiryRoutes , mbbsGeorgiaEnquiryRoutes} from "./routes/MbbsEnquiryRoute.js";
 
 
 
@@ -111,7 +111,9 @@ app.use('/api', checkDatabaseConnection);
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/consultationForm', consultationRoutes);
-app.use('/api/enquiry', mbbsEnquiryRoutes);
+app.use('/api/enquiry/mbbs-in-india', mbbsIndiaEnquiryRoutes);
+app.use('/api/enquiry/mbbs-in-nepal', mbbsNepalEnquiryRoutes); 
+app.use("/api/enquiry/mbbs-in-georgia", mbbsGeorgiaEnquiryRoutes);
 // Health check endpoint
 app.get('/api/health', (req, res) => {
   res.json({ 
