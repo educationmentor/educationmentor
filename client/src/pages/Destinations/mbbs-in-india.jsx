@@ -505,21 +505,27 @@ const EnquiryPage = ({ onBack }) => {
   const update = (key) => (e) => setForm((f) => ({ ...f, [key]: e.target.value }));
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
-  if (!form.name || !form.phone) return;
-  setStatus('submitting');
-  try {
-    const response = await axios.post(`${baseUrl}/api/enquiry`, form);
-    if (response.data.success) {
-      toast.success('Thank you for your enquiry! Our counsellor will call you shortly.');
-      setStatus('done');
+    e.preventDefault();
+    if (!form.name || !form.phone) return;
+    setStatus('submitting');
+    try {
+      const response = await axios.post(`${baseUrl}/api/enquiry/mbbs-in-india`, form);
+
+      if (response.data.success) {
+        toast.success('Thank you for your enquiry! Our counsellor will call you shortly.');
+        setStatus('done');
+      }
+    } catch (error) {
+      console.error('MBBS enquiry error:', error);
+      if (error.response) {
+        toast.error(error.response.data.message || 'Failed to submit your enquiry');
+      } else {
+        toast.error('An error occurred while submitting your enquiry. Please try again.');
+      }
+      setStatus('idle');
     }
-  } catch (error) {
-    console.error('MBBS enquiry error:', error);
-    toast.error(error.response?.data?.message || 'Failed to submit your enquiry');
-    setStatus('idle');
-  }
-};
+  };
+
   return (
     <div className="min-h-screen" style={{ backgroundColor: 'var(--paper)' }}>
       <div className="px-[6vw] md:px-[12.5vw] pt-6">

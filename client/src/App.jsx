@@ -11,6 +11,8 @@ import ContactUs from './pages/Contact-us';
 import Blogs from './pages/Blogs';
 import StudyInGermany from './pages/Destinations/study-in-germany';
 import StudyMBBSIndia from './pages/Destinations/mbbs-in-india';
+import StudyMBBSNepal from './pages/Destinations/mbbs-in-nepal';
+import StudyMBBSGeorgia from './pages/Destinations/mbbs-in-georgia';
 
 const App = () => {
   return (
@@ -23,7 +25,9 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/study-in-usa" element={<USA />} />
           <Route path="/mbbs-in-india" element={<StudyMBBSIndia />} />
+          <Route path="/mbbs-in-nepal" element={<StudyMBBSNepal />} />
           <Route path="/study-in-germany" element={<StudyInGermany />} />
+          <Route path="/mbbs-in-georgia" element={<StudyMBBSGeorgia />} />
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/blogs" element={<Blogs />} />
         </Routes>

@@ -41,6 +41,16 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
+            <Link to="/mbbs-in-nepal" className="hover:text-purple-600">
+              MBBS in Nepal
+            </Link>
+          </li>
+          <li>
+            <Link to="/mbbs-in-georgia" className="hover:text-purple-600">
+              MBBS in Georgia
+            </Link>
+          </li>
+          <li>
             <Link to="/contact-us" className="hover:text-purple-600">
               Contact Us
             </Link>
