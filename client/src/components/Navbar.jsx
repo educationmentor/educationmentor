@@ -93,6 +93,21 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
+              <Link to="/mbbs-in-india" onClick={() => setMenuOpen(false)}>
+                MBBS in India
+              </Link>
+            </li>
+            <li>
+              <Link to="/mbbs-in-nepal" onClick={() => setMenuOpen(false)}>
+                MBBS in Nepal
+              </Link>
+            </li>
+            <li>
+              <Link to="/mbbs-in-georgia" onClick={() => setMenuOpen(false)}>
+                MBBS in Georgia
+              </Link>
+            </li>
+            <li>
               <Link to="/contact" onClick={() => setMenuOpen(false)}>
                 Contact Us
               </Link>
