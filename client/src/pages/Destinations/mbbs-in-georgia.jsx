@@ -797,14 +797,14 @@ const MbbsInGeorgia = () => {
         @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
 
         :root {
-          --ink: #2D2023;
-          --paper: #F8F5EF;
-          --card: #FFFFFF;
-          --deep-navy: #541F2B;
-          --navy: #7A3543;
-          --gold: #C6A15B;
-          --sand: #E8DED0;
-        }
+  --ink: #182522;
+  --paper: #F5F0E6;
+  --card: #FFFCF6;
+  --deep-navy: #30463E;
+  --navy: #30463E;
+  --gold: #E76F51;
+  --sand: #9DAF9A;
+}
         html { scroll-behavior: smooth; }
         .font-display { font-family: 'Fraunces', serif; }
 

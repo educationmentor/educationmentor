@@ -790,14 +790,14 @@ const MbbsInNepal = () => {
         @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
 
         :root {
-          --ink: #101D35;
-          --paper: #F7F4EC;
-          --card: #FFFFFF;
-          --deep-navy: #101D35;
-          --navy: #263B5A;
-          --gold: #D99A3D;
-          --sand: #E6D7BD;
-        }
+  --ink: #182522;
+  --paper: #F5F0E6;
+  --card: #FFFCF6;
+  --deep-navy: #30463E;
+  --navy: #30463E;
+  --gold: #E76F51;
+  --sand: #9DAF9A;
+}
         html { scroll-behavior: smooth; }
         .font-display { font-family: 'Fraunces', serif; }
 
