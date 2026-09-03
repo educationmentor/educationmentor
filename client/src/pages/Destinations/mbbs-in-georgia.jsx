@@ -578,7 +578,7 @@ const HomePage = ({ onEnquire }) => (
           <div className="flex flex-col gap-5">
             <Eyebrow>Georgia 2026/27 · English MD Programs</Eyebrow>
             <h1 className="font-display text-[34px] md:text-[50px] leading-[1.08] font-semibold text-[var(--ink)]">
-              A European medical education —<br />
+              A European Standard medical education —<br />
               your <span className="text-[var(--gold)] hero-underline">MBBS</span> in Georgia, done right.
             </h1>
             <p className="text-[15px] md:text-[17px] leading-relaxed text-[var(--ink)]/75 max-w-xl" style={{ fontFamily: 'Inter, sans-serif' }}>
