@@ -21,7 +21,7 @@ const Footer = () => {
               <h4 className="text-sm font-semibold text-gray-900 mb-4">Follow Us</h4>
               <div className="flex space-x-4">
                 {/* Instagram */}
-                <a href="https://www.instagram.com/the_educational_mentor?igsh=MW1ucmNmcXl3eWJsMg==" className="text-gray-600 hover:text-pink-600 transition-colors">
+                <a href="https://www.instagram.com/education_saathi_?stkn=MThjYW5taWI2cDF5OQ==" className="text-gray-600 hover:text-pink-600 transition-colors">
                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm0 2h10c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3zm5 3.5A4.5 4.5 0 1 0 16.5 12 4.505 4.505 0 0 0 12 7.5zm0 2A2.5 2.5 0 1 1 9.5 12 2.503 2.503 0 0 1 12 9.5zm4.75-3.75a1.25 1.25 0 1 0 1.25 1.25 1.25 1.25 0 0 0-1.25-1.25z"/>
                   </svg>
@@ -86,9 +86,10 @@ const Footer = () => {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-gray-600">Noida : Suite No.4, CoWorkZen, Tower B, 6th Floor, Bhutani Cyber Park, Sector 62, Noida - 201309</p>
+                  <p className="text-gray-600">New delhi (Head Office) : 219 , 221 , 223 Second floor , Best Arcade Market , Above Canara Bank  , Near K.M. Chowk , Pocket 6, Sector 12 Dwarka - New Delhi - 110075</p><br></br>
+                  <p className="text-gray-600">Noida : Suite No.4, CoWorkZen, Tower B, 6th Floor, Bhutani Cyber Park, Sector 62, Noida - 201309</p><br></br>
                   <p className="text-gray-600">Guwahati: 3rd Floor, 6, MS Road, Fancy Bazar, Guwahati - 781001</p>
-                  <p className="text-gray-600">New delhi : 219 , 221 , 223 Second floor , Best Arcade Market , Above Canara Bank  , Near K.M. Chowk , Pocket 6, Sector 12 Dwarka - New Delhi - 110075</p>
+                  
                 </div>
               </div>
               
@@ -113,10 +114,11 @@ const Footer = () => {
                 <div>
                 <a href='tel:+918800907657'>
                 <p className="text-gray-600">+91 88009 07657 Head office </p></a>
-                <a href='tel:+918510010500'>
-                <p className="text-gray-600">+91 85100 10500 Guwahati Branch office </p></a>
                 <a href='tel:+917011043124'>
                 <p className="text-gray-600">+91 70110 43124 Noida Branch office </p></a>
+                <a href='tel:+918510010500'>
+                <p className="text-gray-600">+91 85100 10500 Guwahati Branch office </p></a>
+                
          </div>
                 
               </div>

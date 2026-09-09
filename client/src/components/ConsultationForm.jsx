@@ -110,7 +110,7 @@ const ConsultationForm = ({ onClose }) => {
                 />
               </div>
 
-              <div>
+              {/* <div>
                 <label className="block font-medium text-gray-700">Email</label>
                 <input
                   type="email"
@@ -120,7 +120,7 @@ const ConsultationForm = ({ onClose }) => {
                   required
                   className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-900 focus:border-indigo-900"
                 />
-              </div>
+              </div> */}
 
               <div>
                 <label className="block font-medium text-gray-700">Phone</label>

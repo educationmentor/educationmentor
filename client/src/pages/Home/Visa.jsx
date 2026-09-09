@@ -1,90 +1,67 @@
-import React from 'react';
-import image2 from '../../assets/images/home/image2.png';
-import Frame from '../../assets/images/home/Frame.png';
-import aeroplane from '../../assets/images/home/aeroplane.png';
+import React from "react";
+import image2 from "../../assets/images/home/image2.png";
+import Frame from "../../assets/images/home/Frame.png";
+import JourneyStamp from "../../components/JourneyStamp";
+
 const Visa = () => {
   return (
-    <section className="py-20 bg-gradient-to-br from-blue-50 to-purple-50 relative overflow-hidden">
-      {/* Background Decorative Elements */}
-
-      <div className="absolute top-20 right-10 w-24 h-24 bg-orange-200 rounded-full opacity-30"></div>
-      <div className="absolute bottom-20 right-20 w-20 h-20 bg-green-200 rounded-full opacity-40"></div>
-      
-      {/* Dot patterns */}
-      <div className="absolute top-32 right-32 w-24 h-24 opacity-30">
-        <div className="grid grid-cols-6 gap-1">
-          {[...Array(36)].map((_, i) => (
-            <div key={i} className="w-1.5 h-1.5 bg-purple-400 rounded-full"></div>
-          ))}
-        </div>
-      </div>
-      
-      <div className="absolute bottom-16 left-20 w-24 h-24 opacity-30">
-        <div className="grid grid-cols-6 gap-1">
-          {[...Array(36)].map((_, i) => (
-            <div key={i} className="w-1.5 h-1.5 bg-red-400 rounded-full"></div>
-          ))}
-        </div>
-      </div>
-
-      {/* Plane icon */}
-      <div className="absolute top-3  left-36 rounded-full flex items-center justify-center z-40">
-        <img src={aeroplane} alt="Plane" className="w-16 h-16" />
-      </div>
-
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          
-          {/* Left Side - Content */}
-          <div className="space-y-6 lg:pr-8">
-            <h1 className="text-4xl lg:text-5xl font-bold text-indigo-900 leading-tight">
-              From Visa Consultancy
-              <br />
-              <span className="text-indigo-700">to Accommodation</span>
-            </h1>
-            
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Beyond admissions, we guide you through visa applications, travel planning, 
-              and securing accommodation—ensuring a smooth transition to your dream destination.
+    <section className="py-16 sm:py-24 bg-white relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16 items-center">
+          {/* Content side */}
+          <div className="flex flex-col space-y-5 lg:pr-6">
+            <p className="text-sm sm:text-base font-medium" style={{ color: "#2F6F62" }}>Stage two — visa &amp; travel</p>
+            <h2
+              className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl leading-tight"
+              style={{ color: "#14213D", fontFamily: "'Fraunces', 'Georgia', serif", fontWeight: 600 }}
+            >
+              From visa consultancy to accommodation
+            </h2>
+            <p className="text-base sm:text-lg leading-relaxed max-w-lg" style={{ color: "#4B5165" }}>
+              Beyond admissions, we guide you through visa applications,
+              travel planning and securing accommodation — so the move itself
+              never becomes the hard part.
             </p>
-            
-            <div className="pt-4">
-              <button className="bg-white text-purple-600 px-8 py-4 rounded-full font-semibold border-2 border-purple-600 hover:bg-purple-600 hover:text-white transition-all duration-300 shadow-lg">
-                Get Started
+            <div className="pt-2">
+              <button
+                className="px-7 py-3 sm:py-4 rounded-full font-semibold border-2 transition-all duration-300 text-sm sm:text-base"
+                style={{ borderColor: "#14213D", color: "#14213D" }}
+                onMouseOver={(e) => { e.currentTarget.style.backgroundColor = "#14213D"; e.currentTarget.style.color = "#fff"; }}
+                onMouseOut={(e) => { e.currentTarget.style.backgroundColor = "transparent"; e.currentTarget.style.color = "#14213D"; }}
+              >
+                Get started
               </button>
             </div>
           </div>
 
-          {/* Right Side - Image with Floating Card */}
-          <div className="relative">
-            <div className="relative">
-              <img 
-                src={image2} 
-                alt="Happy graduate student in cap and gown" 
-                className="w-full max-w-md mx-auto h-96 bg-gradient-to-br from-orange-200 to-red-300 rounded-2xl object-cover shadow-xl"
-              />
-              
-              {/* Floating Visa Help Card */}
-              <div className="absolute bottom-8  -left-3 bg-white rounded-xl shadow-xl p-4 max-w-xs border border-gray-100 z-20">
-                <div className="flex items-center space-x-3">
-                  <div className="w-15 h-15 bg-purple-400 rounded-full flex items-center justify-center">
-                    <img src={Frame} alt="" className="w-8 h-8" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-gray-800 text-sm mb-1">Visa Help?</h4>
-                    <p className="text-xs text-gray-600 leading-relaxed">
-                      US and visas will help you with your visa.
-                    </p>
-                  </div>
+          {/* Image side */}
+          <div className="relative flex flex-col items-center">
+            <img
+              src={image2}
+              alt="Happy graduate student in cap and gown"
+              className="w-full max-w-md mx-auto h-[22rem] sm:h-96 rounded-[2rem] object-cover shadow-lg border-4 border-white"
+            />
+
+            <div className="absolute -top-6 -left-3 sm:-top-8 sm:-left-8">
+              <JourneyStamp label="VISA" sub="ready" tone="teal" rotate={-8} size={78} />
+            </div>
+
+            <div className="absolute -bottom-6 -right-3 sm:-bottom-8 sm:-right-8 bg-white rounded-2xl shadow-lg p-4 max-w-[85vw] sm:max-w-xs border" style={{ borderColor: "#F0EAD9" }}>
+              <div className="flex items-center space-x-3">
+                <div className="w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "#E9F1EF" }}>
+                  <img src={Frame} alt="" className="w-7 h-7" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm" style={{ color: "#14213D" }}>Visa help?</h4>
+                  <p className="text-xs" style={{ color: "#4B5165" }}>We handle the paperwork with you.</p>
                 </div>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default Visa;

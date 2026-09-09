@@ -30,11 +30,11 @@ const Navbar = () => {
               About Us
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link to="/blogs" className="hover:text-purple-600">
               Blogs
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link to="/mbbs-in-india" className="hover:text-purple-600">
               MBBS in India
@@ -55,13 +55,13 @@ const Navbar = () => {
               Contact Us
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link
               className="bg-purple-200 text-purple-700 px-6 py-2 rounded-full font-medium hover:bg-purple-300 transition"
             >
               Sign Up
             </Link>
-          </li>
+          </li> */}
         </ul>
 
         {/* Mobile Menu Button */}
@@ -87,11 +87,11 @@ const Navbar = () => {
                 About Us
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/blogs" onClick={() => setMenuOpen(false)}>
                 Blogs
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link to="/mbbs-in-india" onClick={() => setMenuOpen(false)}>
                 MBBS in India
@@ -112,7 +112,7 @@ const Navbar = () => {
                 Contact Us
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link
                 to="/signup"
                 className="bg-purple-200 text-purple-700 px-6 py-2 rounded-full font-medium hover:bg-purple-300 transition"
@@ -120,7 +120,7 @@ const Navbar = () => {
               >
                 Sign Up
               </Link>
-            </li>
+            </li> */}
           </ul>
         </div>
       )}

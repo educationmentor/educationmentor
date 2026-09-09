@@ -1,200 +1,180 @@
-import React, { useState, useEffect, useRef } from 'react'
-import { useNavigate } from 'react-router-dom';
-import HeroImage from '../../assets/images/home/hero1.png';
-import avatar1 from '../../assets/images/home/avatar1.png';
-import avatar2 from '../../assets/images/home/avatar2.png';
-import avatar3 from '../../assets/images/home/avatar3.png';
-import avatar4 from '../../assets/images/home/avatar4.png';
-import ConsultationForm from '../../components/ConsultationForm';
-import seacrh from '../../assets/images/home/search.png';
-import Vector from '../../assets/images/home/Vector.png';
-import { destinationData } from '../../util/destinationData';
+import React from "react";
+import {
+  ArrowRight,
+  GraduationCap,
+  Globe2,
+  Sparkles,
+  CheckCircle2,
+} from "lucide-react";
 
-const Hero = () => {
-  const navigate = useNavigate();
-  const [showConsultationForm, setShowConsultationForm] = useState(false);
-  const [searchValue, setSearchValue] = useState('');
-  const [showDropdown, setShowDropdown] = useState(false);
-  const searchRef = useRef(null);
-  const dropdownRef = useRef(null);
+import heroImage from "../../assets/images/home/image1.png";
 
-  useEffect(() => {
-    if (showConsultationForm) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-  }, [showConsultationForm]);
-
-  // Filter destinations based on search input
-  const filteredDestinations = destinationData.filter(dest =>
-    dest.title.toLowerCase().includes(searchValue.toLowerCase())
-  );
-
-  // Handle input change
-  const handleInputChange = (e) => {
-    const value = e.target.value;
-    setSearchValue(value);
-    // Check if there are matching destinations
-    const hasMatches = destinationData.some(dest =>
-      dest.title.toLowerCase().includes(value.toLowerCase())
-    );
-    setShowDropdown(value.length > 0 && hasMatches);
-  };
-
-  // Handle destination click
-  const handleDestinationClick = (href) => {
-    setSearchValue('');
-    setShowDropdown(false);
-    navigate(href);
-  };
-
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (
-        searchRef.current &&
-        !searchRef.current.contains(event.target) &&
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target)
-      ) {
-        setShowDropdown(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
-  // bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 
+const Hero = ({ onConsultation }) => {
   return (
-    <section className="md:min-h-screen min-h-[85vh] bg-white px-4 sm:px-5 py-8 sm:py-16 flex items-center">
-      <div className="max-w-7xl mx-auto w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-          <div className="space-y-5 sm:space-y-8 lg:pr-10">
-            <div className="pt-0 sm:pt-0">
-              <div className="flex items-center justify-start gap-2">
-                <span className="text-gray-400 text-base sm:text-sm font-semibold tracking-widest uppercase">
-                  OUR GOAL
-                </span>
-                <img src={Vector} alt="" className="w-12 h-3 object-contain" />
-              </div>
-            </div>
-            <h1 className="mt-2 text-xl xs:text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#050E62] leading-tight text-left">
-              Boost Your Career Journey With Us!
-            </h1>
-            <p className="text-gray-600 text-sm xs:text-base sm:text-lg leading-relaxed text-left">
-              Get real time mentorship through video chat from the best counsellors, alumni's and students of universities across the globe.
-            </p>
-            <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-3 sm:space-y-0 w-full relative">
-              <div className="flex-1 relative" ref={searchRef}>
-                <div className="flex items-center bg-[#D5CEE4] rounded-xl shadow-lg border border-gray-200 overflow-hidden w-full min-h-[48px] sm:min-h-[56px]">
-                  <input 
-                    type="text" 
-                    placeholder="Search for Courses or Courses"
-                    value={searchValue}
-                    onChange={handleInputChange}
-                    onFocus={() => searchValue.length > 0 && filteredDestinations.length > 0 && setShowDropdown(true)}
-                    className="flex-1 px-2 sm:px-4 py-2 sm:py-4 text-gray-900 placeholder-gray-700 border-none outline-none text-sm sm:text-sm bg-transparent"
-                    style={{ minWidth: 0 }}
-                  />
-                  <img
-                    src={seacrh}
-                    alt="Search"
-                    className="w-6 h-6 mx-3"
-                  />
-                </div>
-                {/* Dropdown */}
-                {showDropdown && filteredDestinations.length > 0 && (
-                  <div 
-                    ref={dropdownRef}
-                    className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-xl border border-gray-200 max-h-60 overflow-y-auto z-50"
-                  >
-                    {filteredDestinations.map((destination, index) => (
-                      <div
-                        key={index}
-                        onClick={() => handleDestinationClick(destination.href)}
-                        className="px-4 py-3 hover:bg-purple-50 cursor-pointer transition-colors duration-150 border-b border-gray-100 last:border-b-0"
-                      >
-                        <div className="flex items-center space-x-3">
-                          {destination.image && (
-                            <img 
-                              src={destination.image} 
-                              alt={destination.title}
-                              className="w-10 h-10 rounded-md object-cover"
-                            />
-                          )}
-                          <div className="flex-1">
-                            <p className="text-sm font-semibold text-gray-900">{destination.title}</p>
-                            {destination.description && (
-                              <p className="text-xs text-gray-600 mt-1 line-clamp-1">{destination.description}</p>
-                            )}
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-              <button
-                onClick={() => setShowConsultationForm(true)}
-                className="w-full sm:w-auto mt-2 sm:mt-0 bg-gradient-to-r cursor-pointer from-purple-600 to-indigo-600 text-white px-5 sm:px-8 py-2.5 sm:py-4 rounded-full font-semibold hover:from-purple-700 hover:to-indigo-700 transform hover:-translate-y-1 transition-all duration-200 shadow-lg text-base"
-              >
-                Book Free Consultation
-              </button>
-            </div>
-            <div className="flex flex-col rounded-full sm:flex-row items-center mt-3">
-              <div className="flex items-center justify-center sm:justify-start w-full">
-                <div className="flex -space-x-2">
-                  <img
-                    src={avatar1}
-                    alt="Student 1"
-                    className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 object-cover shadow"
-                    style={{ borderColor: '#3E05B080', borderStyle: 'solid' }}
-                  />
-                  <img
-                    src={avatar2}
-                    alt="Student 2"
-                    className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 object-cover shadow"
-                    style={{ borderColor: '#3E05B080', borderStyle: 'solid' }}
-                  />
-                  <img
-                    src={avatar3}
-                    alt="Student 3"
-                    className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 object-cover shadow"
-                    style={{ borderColor: '#3E05B080', borderStyle: 'solid' }}
-                  />
-                  <img
-                    src={avatar4}
-                    alt="Student 4"
-                    className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 object-cover shadow"
-                    style={{ borderColor: '#3E05B080', borderStyle: 'solid' }}
-                  />
-                </div>
-                <span className="ml-3 text-[#290572] font-bold text-xs sm:text-base whitespace-nowrap">
-                  Trusted by students worldwide
-                </span>
-              </div>
-            </div>
-          </div>
-          <div className="relative flex justify-center items-center mt-8 lg:mt-0">
-            <img 
-              src={HeroImage}
-              alt="Students with global education background" 
-             className="w-[90%] max-w-lg h-48 xs:h-56 sm:h-96 md:h-[32rem] lg:h-[34rem] rounded-full  bg-white object-cover"
+    <section className="relative min-h-[92vh] overflow-hidden bg-[#172033] flex items-center">
 
-            />
+      {/* Background glow */}
+      <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-[#5964B5] rounded-full blur-[150px] opacity-40 animate-pulseSlow" />
+
+      <div className="absolute bottom-[-20%] left-[-10%] w-[450px] h-[450px] bg-[#F07C62] rounded-full blur-[160px] opacity-20" />
+
+      {/* Decorative circles */}
+      <div className="absolute top-28 left-[5%] w-3 h-3 rounded-full bg-[#F07C62] animate-float" />
+      
+      <div className="absolute bottom-24 right-[8%] w-5 h-5 rounded-full border border-[#A9A7D8] animate-floatSlow" />
+
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 w-full relative z-10 pt-28 pb-16">
+
+        <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+
+          {/* LEFT CONTENT */}
+          <div className="max-w-2xl">
+
+            {/* Small badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/10 text-[#F7F5F0] text-sm mb-7 animate-slideUp">
+              <Sparkles size={16} className="text-[#F07C62]" />
+              Your trusted MBBS guidance partner
+            </div>
+
+            {/* Main Heading */}
+            <h1 className="text-[2.8rem] sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.05] tracking-tight text-[#F7F5F0] animate-slideUp delay-100">
+              Your MBBS Dream
+              <span className="block text-[#F07C62] mt-2">
+                Deserves a Global Beginning.
+              </span>
+            </h1>
+
+            {/* Description */}
+            <p className="mt-7 text-base sm:text-lg md:text-xl leading-relaxed text-[#A9A7D8] max-w-xl animate-slideUp delay-200">
+              Guiding future doctors towards the right universities and
+              opportunities worldwide — with clarity, confidence, and support
+              at every step of your journey.
+            </p>
+
+            {/* CTA */}
+            <div className="flex flex-col sm:flex-row gap-4 mt-9 animate-slideUp delay-300">
+
+              <button
+                onClick={onConsultation}
+                className="group px-7 py-4 rounded-full bg-[#F07C62] text-[#172033] font-semibold flex items-center justify-center gap-3 hover:scale-[1.03] transition-all duration-300 shadow-xl shadow-[#F07C62]/20"
+              >
+                Start Your MBBS Journey
+
+                <ArrowRight
+                  size={19}
+                  className="group-hover:translate-x-1 transition-transform"
+                />
+              </button>
+
+              <button className="px-7 py-4 rounded-full border border-white/20 text-[#F7F5F0] font-medium hover:bg-white hover:text-[#172033] transition-all duration-300">
+                Explore MBBS Options
+              </button>
+
+            </div>
+
+            {/* Trust points */}
+            <div className="flex flex-wrap gap-x-6 gap-y-3 mt-9 text-sm text-[#F7F5F0]/80 animate-slideUp delay-500">
+
+              <div className="flex items-center gap-2">
+                <CheckCircle2 size={16} className="text-[#F07C62]" />
+                Expert MBBS Guidance
+              </div>
+
+              <div className="flex items-center gap-2">
+                <CheckCircle2 size={16} className="text-[#F07C62]" />
+                University Selection Support
+              </div>
+
+              <div className="flex items-center gap-2">
+                <CheckCircle2 size={16} className="text-[#F07C62]" />
+                Global Opportunities
+              </div>
+
+            </div>
+
           </div>
+
+
+          {/* RIGHT VISUAL */}
+          <div className="relative flex justify-center animate-heroVisual">
+
+            {/* Main image glow */}
+            <div className="absolute inset-0 bg-[#5964B5] blur-[100px] opacity-40 rounded-full" />
+
+            <div className="relative w-full max-w-[500px]">
+
+              {/* Main image */}
+              <div className="relative rounded-[2.5rem] overflow-hidden border border-white/15 shadow-2xl">
+
+                <img
+                  src={heroImage}
+                  alt="Student beginning their MBBS journey abroad"
+                  className="w-full h-[480px] sm:h-[560px] object-cover"
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-[#172033]/50 via-transparent to-transparent" />
+
+              </div>
+
+
+              {/* Floating Card 1 */}
+              <div className="absolute -left-6 sm:-left-14 top-12 bg-[#F7F5F0] rounded-2xl p-4 sm:p-5 shadow-2xl animate-float">
+
+                <div className="w-11 h-11 rounded-xl bg-[#F07C62]/20 flex items-center justify-center mb-3">
+
+                  <GraduationCap
+                    size={23}
+                    className="text-[#F07C62]"
+                  />
+
+                </div>
+
+                <p className="text-xs text-[#5964B5] font-medium">
+                  PLAN YOUR FUTURE
+                </p>
+
+                <h3 className="font-semibold text-[#172033] mt-1">
+                  MBBS Guidance
+                </h3>
+
+              </div>
+
+
+              {/* Floating Card 2 */}
+              <div className="absolute -right-5 sm:-right-12 bottom-16 bg-[#5964B5] text-white rounded-2xl p-5 shadow-2xl animate-floatReverse">
+
+                <Globe2 size={26} className="text-[#F07C62] mb-3" />
+
+                <p className="text-xs text-white/70">
+                  EXPLORE
+                </p>
+
+                <h3 className="text-lg font-semibold">
+                  MBBS Abroad
+                </h3>
+
+              </div>
+
+
+              {/* Badge */}
+              <div className="absolute right-10 -top-5 w-20 h-20 rounded-full bg-[#F07C62] flex items-center justify-center text-center text-xs font-bold text-[#172033] rotate-12 animate-spinSlow">
+
+                FUTURE
+                <br />
+                DOCTOR
+
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
+
       </div>
-      {showConsultationForm && (
-        <div className="fixed top-0 left-0 w-full h-screen bg-black bg-opacity-50 flex items-center justify-center z-50 animate-in fade-in duration-300">
-          <ConsultationForm onClose={() => setShowConsultationForm(false)} />
-        </div>
-      )}
+
     </section>
-  )
-}
+  );
+};
 
 export default Hero;

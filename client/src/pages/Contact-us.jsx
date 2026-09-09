@@ -69,10 +69,10 @@ const ContactUs = () => {
         setFormData({
           firstName: '',
           lastName: '',
-          email: '',
+          // email: '',
           phoneNumber: '',
           state: '',
-          city: '',
+          // city: '',
           interest: '',
           message: '',
           agreeToContact: false
@@ -121,12 +121,13 @@ const ContactUs = () => {
           <img src={locationIcon} alt="locationIcon" className='w-[1.25] h-auto' />
           <div>
           <a href="mailto:enquiry.educationsaathi@gmail.com">
+            <a href="mailto:enquiry.educationsaathi@gmail.com">
+            <p className='text-smallTextPhone md:text-regularText '>New Delhi(Head Office) - 219 , 221 , 223 Second floor , Best Arcade Market , Above Canara Bank  , Near K.M. Chowk , Pocket 6, Sector 12 Dwarka ,  New Delhi - 110075</p>
+            </a><br></br>
             <p className='text-smallTextPhone md:text-regularText '>Noida : Suite No.4, CoWorkZen, Tower B, 6th Floor, Bhutani Cyber Park, Sector 62, Noida - 201309</p></a><br/>
             <a href="mailto:enquiry.educationsaathi@gmail.com">
             <p className='text-smallTextPhone md:text-regularText '>Guwahati: 3rd Floor, 6, MS Road, Fancy Bazar, Guwahati - 781001</p> </a><br/>
-            <a href="mailto:enquiry.educationsaathi@gmail.com">
-            <p className='text-smallTextPhone md:text-regularText '>New Delhi - 219 , 221 , 223 Second floor , Best Arcade Market , Above Canara Bank  , Near K.M. Chowk , Pocket 6, Sector 12 Dwarka ,  New Delhi - 110075</p>
-            </a><br/>
+            <br/>
           </div>
         </div>
         </div>
@@ -171,7 +172,7 @@ const ContactUs = () => {
 
           {/* Two Column Layout - Email & Phone Number */}
           <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-            <div>
+            {/* <div>
               <label htmlFor='email' className='block text-sm font-medium text-gray-700 mb-1'>
                 Email
               </label>
@@ -184,7 +185,7 @@ const ContactUs = () => {
                 required
                 className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent'
               />
-            </div>
+            </div> */}
             <div>
               <label htmlFor='phoneNumber' className='block text-sm font-medium text-gray-700 mb-1'>
                 Phone number
@@ -199,10 +200,6 @@ const ContactUs = () => {
                 className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent'
               />
             </div>
-          </div>
-
-          {/* Two Column Layout - State & City */}
-          <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
             <div>
               <label htmlFor='state' className='block text-sm font-medium text-gray-700 mb-1'>
                 State
@@ -223,6 +220,11 @@ const ContactUs = () => {
                 ))}
               </select>
             </div>
+          </div>
+
+          {/* Two Column Layout - State & City
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+            
             <div>
               <label htmlFor='city' className='block text-sm font-medium text-gray-700 mb-1'>
                 City
@@ -244,7 +246,7 @@ const ContactUs = () => {
                 ))}
               </select>
             </div>
-          </div>
+          </div> */}
 
           {/* Select Your Interest Section */}
           <div>
@@ -258,25 +260,25 @@ const ContactUs = () => {
                   <input
                     type='radio'
                     name='interest'
-                    value='Career Mentorship'
-                    checked={formData.interest === 'Career Mentorship'}
+                    value='MBBS UG'
+                    checked={formData.interest === 'MBBS UG'}
                     onChange={handleChange}
                     required
                     className='mr-2 text-purple-600 focus:ring-purple-500'
                   />
-                  <span className='text-sm text-gray-700'>Career Mentorship</span>
+                  <span className='text-sm text-gray-700'>MBBS UG</span>
                 </label>
                 <label className='flex items-center cursor-pointer'>
                   <input
                     type='radio'
                     name='interest'
-                    value='Internship / Placement Guidance'
-                    checked={formData.interest === 'Internship / Placement Guidance'}
+                    value='MBBS PG'
+                    checked={formData.interest === 'MBBS PG'}
                     onChange={handleChange}
                     required
                     className='mr-2 text-purple-600 focus:ring-purple-500'
                   />
-                  <span className='text-sm text-gray-700'>Internship / Placement Guidance</span>
+                  <span className='text-sm text-gray-700'>MBBS PG</span>
                 </label>
                 <label className='flex items-center cursor-pointer'>
                   <input
@@ -297,13 +299,13 @@ const ContactUs = () => {
                   <input
                     type='radio'
                     name='interest'
-                    value='Academic Support'
-                    checked={formData.interest === 'Academic Support'}
+                    value='MBBS Abroad'
+                    checked={formData.interest === 'MBBS Abroad'}
                     onChange={handleChange}
                     required
                     className='mr-2 text-purple-600 focus:ring-purple-500'
                   />
-                  <span className='text-sm text-gray-700'>Academic Support</span>
+                  <span className='text-sm text-gray-700'>MBBS Abroad</span>
                 </label>
                 <label className='flex items-center cursor-pointer'>
                   <input
