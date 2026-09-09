@@ -7,12 +7,7 @@ const destinations = [
     image:
       "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=900&q=80",
   },
-  {
-    country: "Germany",
-    flag: "🇩🇪",
-    image:
-      "https://images.unsplash.com/photo-1545987796-200677ee1011?auto=format&fit=crop&w=900&q=80",
-  },
+  
   {
     country: "Nepal",
     flag: "🇳🇵",
@@ -24,6 +19,12 @@ const destinations = [
     flag: "🇬🇪",
     image:
       "https://images.unsplash.com/photo-1565008576549-57569a49371d?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    country: "Germany",
+    flag: "🇩🇪",
+    image:
+      "https://images.unsplash.com/photo-1545987796-200677ee1011?auto=format&fit=crop&w=900&q=80",
   },
   {
     country: "USA",
