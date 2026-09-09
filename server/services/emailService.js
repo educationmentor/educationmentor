@@ -31,7 +31,7 @@ export const sendConsultationNotification = async (consultationData) => {
           <div style="background-color: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
             <h3 style="color: #1e293b; margin-top: 0;">Contact Details:</h3>
             <p><strong>Name:</strong> ${consultationData.name}</p>
-            <p><strong>Email:</strong> ${consultationData.email}</p>
+            
             <p><strong>Phone:</strong> ${consultationData.phone}</p>
             <p><strong>Interested Country:</strong> ${consultationData.interestedCountry}</p>
           </div>
