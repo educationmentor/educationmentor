@@ -32,7 +32,7 @@ const destinations = [
     flag: "🇩🇪",
     path: "/study-in-germany",
     image:
-      "https://images.unsplash.com/photo-1545987796-200677ee1011?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1662475114964-be4a8beeea4e?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGdlcm1hbiUyMGNhc3RsZXxlbnwwfHwwfHx8MA%3D%3D",
   },
 
   {

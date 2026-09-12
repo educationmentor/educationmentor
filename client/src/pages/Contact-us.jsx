@@ -124,7 +124,7 @@ const ContactUs = () => {
       phone: "+91 85100 10500",
       tel: "+918510010500",
       address:
-        "3rd Floor, 6, MS Road, Fancy Bazar, Guwahati - 781001",
+        "3rd Floor, 6, MS Road, Fancy Bazar,\nGuwahati - 781001",
     },
   ];
 
@@ -219,7 +219,7 @@ const ContactUs = () => {
                       Office Address
                     </p>
 
-                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed whitespace-pre-line">
                       {office.address}
                     </p>
                   </div>
