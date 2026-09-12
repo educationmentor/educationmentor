@@ -79,7 +79,7 @@ const AboutHero = () => {
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[58%] sm:w-[55%] h-[78%] rounded-[2.5rem] overflow-hidden shadow-2xl z-10 animate-[float_7s_ease-in-out_infinite]">
               
               <img
-                src={founder3}
+                src={founder2}
                 alt="Founder of Education Saathi"
                 className="w-full h-full object-cover"
               />
@@ -121,7 +121,7 @@ const AboutHero = () => {
             <div className="absolute bottom-[2%] right-0 w-[42%] h-[40%] rounded-[2rem] overflow-hidden shadow-xl rotate-[6deg] z-20 border-[6px] border-[#F7F5F0] animate-[float_8s_ease-in-out_infinite]">
               
               <img
-                src={founder2}
+                src={founder3}
                 alt="Education Saathi team member"
                 className="w-full h-full object-cover"
               />

@@ -311,60 +311,6 @@ const Footer = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
 
-                {/* NEW DELHI */}
-                <div className="group bg-white/[0.04] border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:bg-white/[0.07] hover:-translate-y-1 hover:border-[#F07C62]/40">
-
-                  <div className="flex items-center gap-2 mb-4">
-
-                    <div className="w-9 h-9 rounded-lg bg-[#F07C62]/10 flex items-center justify-center text-[#F07C62]">
-                      <MapPin size={17} />
-                    </div>
-
-                    <div>
-                      <p className="text-[#F07C62] font-semibold text-sm">
-                        New Delhi
-                      </p>
-
-                      <p className="text-xs text-[#A9A7D8]">
-                        Head Office
-                      </p>
-                    </div>
-
-                  </div>
-
-                  <p className="text-sm leading-relaxed text-[#A9A7D8] min-h-[120px]">
-                    219, 221, 223 Second Floor, Best Arcade Market,
-                    Above Canara Bank, Near K.M. Chowk, Pocket 6,
-                    Sector 12, Dwarka, New Delhi – 110075
-                  </p>
-
-                  <a
-                    href="tel:+918800907657"
-                    className="mt-5 pt-4 border-t border-white/10 flex items-center gap-3 text-[#F7F5F0] hover:text-[#F07C62] transition-all duration-300 group/phone"
-                  >
-                    <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover/phone:bg-[#F07C62] group-hover/phone:text-[#172033] transition-all duration-300">
-                      <Phone size={17} />
-                    </div>
-
-                    <div>
-                      <p className="text-xs text-[#A9A7D8]">
-                        Call Head Office
-                      </p>
-
-                      <p className="text-sm font-medium">
-                        +91 88009 07657
-                      </p>
-                    </div>
-
-                    <ArrowUpRight
-                      size={16}
-                      className="ml-auto opacity-0 group-hover/phone:opacity-100 transition-all duration-300"
-                    />
-                  </a>
-
-                </div>
-
-
                 {/* NOIDA */}
                 <div className="group bg-white/[0.04] border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:bg-white/[0.07] hover:-translate-y-1 hover:border-[#F07C62]/40">
 
@@ -380,7 +326,7 @@ const Footer = () => {
                       </p>
 
                       <p className="text-xs text-[#A9A7D8]">
-                        Branch Office
+                        Head Office
                       </p>
                     </div>
 
@@ -402,7 +348,7 @@ const Footer = () => {
 
                     <div>
                       <p className="text-xs text-[#A9A7D8]">
-                        Call Noida Office
+                        Call Head Office
                       </p>
 
                       <p className="text-sm font-medium">
@@ -418,6 +364,61 @@ const Footer = () => {
 
                 </div>
 
+                {/* NEW DELHI */}
+                <div className="group bg-white/[0.04] border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:bg-white/[0.07] hover:-translate-y-1 hover:border-[#F07C62]/40">
+
+                  <div className="flex items-center gap-2 mb-4">
+
+                    <div className="w-9 h-9 rounded-lg bg-[#F07C62]/10 flex items-center justify-center text-[#F07C62]">
+                      <MapPin size={17} />
+                    </div>
+
+                    <div>
+                      <p className="text-[#F07C62] font-semibold text-sm">
+                        New Delhi
+                      </p>
+
+                      <p className="text-xs text-[#A9A7D8]">
+                        Branch Office
+                      </p>
+                    </div>
+
+                  </div>
+
+                  <p className="text-sm leading-relaxed text-[#A9A7D8] min-h-[120px]">
+                    219, 221, 223 Second Floor, Best Arcade Market,
+                    Above Canara Bank, Near K.M. Chowk, Pocket 6,
+                    Sector 12, Dwarka, New Delhi – 110075
+                  </p>
+
+                  <a
+                    href="tel:+918800907657"
+                    className="mt-5 pt-4 border-t border-white/10 flex items-center gap-3 text-[#F7F5F0] hover:text-[#F07C62] transition-all duration-300 group/phone"
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover/phone:bg-[#F07C62] group-hover/phone:text-[#172033] transition-all duration-300">
+                      <Phone size={17} />
+                    </div>
+
+                    <div>
+                      <p className="text-xs text-[#A9A7D8]">
+                        Call Delhi Office
+                      </p>
+
+                      <p className="text-sm font-medium">
+                        +91 88009 07657
+                      </p>
+                    </div>
+
+                    <ArrowUpRight
+                      size={16}
+                      className="ml-auto opacity-0 group-hover/phone:opacity-100 transition-all duration-300"
+                    />
+                  </a>
+
+                </div>
+
+
+                
 
                 {/* GUWAHATI */}
                 <div className="group bg-white/[0.04] border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:bg-white/[0.07] hover:-translate-y-1 hover:border-[#F07C62]/40">

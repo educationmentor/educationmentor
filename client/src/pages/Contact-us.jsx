@@ -100,22 +100,23 @@ const ContactUs = () => {
   const offices = [
     {
       number: "01",
-      city: "New Delhi",
-      type: "Head Office",
-      phone: "+91 8800907657",
-      tel: "+918800907657",
-      address:
-        "219, 221, 223 Second Floor, Best Arcade Market, Above Canara Bank, Near K.M. Chowk, Pocket 6, Sector 12 Dwarka, New Delhi - 110075",
-    },
-    {
-      number: "02",
       city: "Noida",
-      type: "Branch Office",
+      type: "Head Office",
       phone: "+91 70110 43124",
       tel: "+917011043124",
       address:
         "Suite No.4, CoWorkZen, Tower B, 6th Floor, Bhutani Cyber Park, Sector 62, Noida - 201309",
     },
+    {
+      number: "02",
+      city: "New Delhi",
+      type: "Branch Office",
+      phone: "+91 8800907657",
+      tel: "+918800907657",
+      address:
+        "219, 221, 223 Second Floor, Best Arcade Market, Above Canara Bank, Near K.M. Chowk, Pocket 6, Sector 12 Dwarka, New Delhi - 110075",
+    },
+    
     {
       number: "03",
       city: "Guwahati",

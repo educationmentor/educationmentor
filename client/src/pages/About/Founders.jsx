@@ -6,36 +6,7 @@ import founder3 from "../../assets/images/about-us/team-2.png";
 import founder1 from "../../assets/images/about-us/team-3.png";
 
 const founders = [
-  {
-    name: "Rishav Singh",
-    role: "Director",
-    image: founder1,
-
-    bio:
-      "With 14 years of building experience from the ground up, Rishav pioneered India's very first Vans retail store. He went on to build a 30-store distribution network for Puma, New Balance, Wildcraft, and other footwear brands before moving into manufacturing, where he now owns a footwear production facility alongside five trading companies. He has also brought his expertise to the defence edtech space and now channels his business experience into opening doors for students abroad.",
-
-    highlights: [
-      "14+ Years of Building",
-      "30-Store Distribution Network",
-      "Business & Growth Strategy",
-    ],
-  },
-
-  {
-    name: "Kunal Chauhan",
-    role: "Director & Academic Head",
-    image: founder2,
-
-    bio:
-      "A visionary educator with over 20 years of experience, Kunal is the founder of the acclaimed Sterling Academy. He has a proven track record of mentoring students to top-tier global universities like Yale, Johns Hopkins, and UC Berkeley.",
-
-    highlights: [
-      "20+ Years Experience",
-      "Global University Mentorship",
-      "Student-First Approach",
-    ],
-  },
-
+  
   {
     name: "Karishma Singh",
     role: "Director",
@@ -48,6 +19,36 @@ const founders = [
       "7+ Years Experience",
       "Medical Education Expert",
       "MBBS & NEET Counselling",
+    ],
+  },
+  {
+    name: "Kunal Chauhan",
+    role: "Director ",
+    image: founder2,
+
+    bio:
+      "A visionary educator with over 20 years of experience, Kunal is the founder of the acclaimed Sterling Academy. He has a proven track record of mentoring students to top-tier global universities like Yale, Johns Hopkins, and UC Berkeley.",
+
+    highlights: [
+      "20+ Years Experience",
+      "Global University Mentorship",
+      "Student-First Approach",
+    ],
+  },
+
+  
+  {
+    name: "Rishav Singh",
+    role: "Director",
+    image: founder1,
+
+    bio:
+      "With 14 years of building experience from the ground up, Rishav pioneered India's very first Vans retail store. He went on to build a 30-store distribution network for Puma, New Balance, Wildcraft, and other footwear brands before moving into manufacturing, where he now owns a footwear production facility alongside five trading companies. He has also brought his expertise to the defence edtech space and now channels his business experience into opening doors for students abroad.",
+
+    highlights: [
+      "14+ Years of Building",
+      "30-Store Distribution Network",
+      "Business & Growth Strategy",
     ],
   },
 ];
