@@ -19,6 +19,10 @@ const ContactUsFormSchema = mongoose.Schema(
         type: String,
         required: true,
     },
+    budget: {
+        type: String,
+        required: true,
+    },
 
     interest: {
       type: String,

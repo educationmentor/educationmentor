@@ -12,7 +12,216 @@ const createTransporter = () => {
     }
   });
 };
+// Send Contact Us form notification email to admin only
+export const sendContactUsNotification = async (contactData) => {
+  try {
+    const transporter = createTransporter();
 
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
+      to: "enquiry.educationsaathi@gmail.com",
+      subject: "New Contact Us Request - Education Saathi",
+
+      html: `
+        <div style="
+          font-family: Arial, sans-serif;
+          max-width: 650px;
+          margin: 0 auto;
+          color: #172033;
+        ">
+
+          <!-- Header -->
+          <div style="
+            background: #172033;
+            padding: 25px;
+            border-radius: 12px 12px 0 0;
+          ">
+            <h2 style="
+              color: #ffffff;
+              margin: 0;
+              font-size: 24px;
+            ">
+              New Contact Us Request
+            </h2>
+
+            <p style="
+              color: #F07C62;
+              margin: 8px 0 0;
+              font-size: 14px;
+            ">
+              Education Saathi Website
+            </p>
+          </div>
+
+
+          <!-- Contact Details -->
+          <div style="
+            background-color: #f8fafc;
+            padding: 25px;
+            border: 1px solid #e2e8f0;
+          ">
+
+            <h3 style="
+              color: #5964B5;
+              margin-top: 0;
+              border-bottom: 2px solid #5964B5;
+              padding-bottom: 10px;
+            ">
+              Student Details
+            </h3>
+
+            <table style="
+              width: 100%;
+              border-collapse: collapse;
+            ">
+
+              <tr>
+                <td style="padding: 10px; font-weight: bold;">
+                  Name:
+                </td>
+
+                <td style="padding: 10px;">
+                  ${contactData.firstName} ${contactData.lastName || ""}
+                </td>
+              </tr>
+
+
+              <tr style="background-color: #ffffff;">
+                <td style="padding: 10px; font-weight: bold;">
+                  Phone:
+                </td>
+
+                <td style="padding: 10px;">
+                  ${contactData.phoneNumber}
+                </td>
+              </tr>
+
+
+              <tr>
+                <td style="padding: 10px; font-weight: bold;">
+                  State:
+                </td>
+
+                <td style="padding: 10px;">
+                  ${contactData.state}
+                </td>
+              </tr>
+
+
+              <tr style="background-color: #ffffff;">
+                <td style="padding: 10px; font-weight: bold;">
+                  Budget:
+                </td>
+
+                <td style="padding: 10px;">
+                  ${contactData.budget}
+                </td>
+              </tr>
+
+
+              <tr>
+                <td style="padding: 10px; font-weight: bold;">
+                  Interested In:
+                </td>
+
+                <td style="padding: 10px;">
+                  ${contactData.interest}
+                </td>
+              </tr>
+
+
+              <tr style="background-color: #ffffff;">
+                <td style="
+                  padding: 10px;
+                  font-weight: bold;
+                  vertical-align: top;
+                ">
+                  Message:
+                </td>
+
+                <td style="padding: 10px;">
+                  ${contactData.message || "No message provided"}
+                </td>
+              </tr>
+
+            </table>
+
+          </div>
+
+
+          <!-- Action Section -->
+          <div style="
+            background-color: #fff4f1;
+            padding: 20px;
+            border: 1px solid #F07C62;
+            border-top: none;
+          ">
+
+            <h3 style="
+              color: #172033;
+              margin-top: 0;
+            ">
+              Next Step
+            </h3>
+
+            <p style="
+              margin-bottom: 0;
+              color: #475569;
+            ">
+              Please contact the student as soon as possible regarding their enquiry.
+            </p>
+
+          </div>
+
+
+          <!-- Footer -->
+          <div style="
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid #e2e8f0;
+            background-color: #ffffff;
+            border-radius: 0 0 12px 12px;
+          ">
+
+            <p style="
+              color: #64748b;
+              font-size: 13px;
+              margin: 0;
+            ">
+              This email was automatically generated from the Education Saathi Contact Us form.
+            </p>
+
+          </div>
+
+        </div>
+      `
+    };
+
+    const info = await transporter.sendMail(mailOptions);
+
+    console.log(
+      "Contact Us notification email sent:",
+      info.messageId
+    );
+
+    return {
+      success: true,
+      messageId: info.messageId
+    };
+
+  } catch (error) {
+
+    console.error(
+      "Error sending Contact Us notification email:",
+      error
+    );
+
+    return {
+      success: false,
+      error: error.message
+    };
+  }
+};
 // Send consultation form notification email
 export const sendConsultationNotification = async (consultationData) => {
   try {
