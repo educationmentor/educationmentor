@@ -90,7 +90,7 @@ const AboutHero = () => {
               {/* Main founder label */}
               <div className="absolute bottom-5 left-5 bg-white/95 backdrop-blur-md px-4 py-3 rounded-2xl shadow-lg">
                 <p className="text-xs font-semibold text-[#F07C62] uppercase tracking-wide">
-                  Founder
+                  Directors
                 </p>
 
                 <p className="text-[#172033] font-semibold text-sm mt-1">

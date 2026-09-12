@@ -7,12 +7,14 @@ import About from './pages/About';
 import USA from './pages/Destinations/study-in-usa';
 import Footer from "./components/Footer";
 import GetStarted from './components/GetStarted';
+import FloatingActions from "./components/FloatingActions";
 import ContactUs from './pages/Contact-us';
 import Blogs from './pages/Blogs';
 import StudyInGermany from './pages/Destinations/study-in-germany';
 import StudyMBBSIndia from './pages/Destinations/mbbs-in-india';
 import StudyMBBSNepal from './pages/Destinations/mbbs-in-nepal';
 import StudyMBBSGeorgia from './pages/Destinations/mbbs-in-georgia';
+
 
 const App = () => {
   return (
@@ -33,7 +35,7 @@ const App = () => {
         </Routes>
         <GetStarted/>
         <Footer />
-
+        <FloatingActions />
 
       </BrowserRouter>
     </>

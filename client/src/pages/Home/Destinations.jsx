@@ -1,43 +1,55 @@
+
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const destinations = [
   {
     country: "India",
     flag: "🇮🇳",
+    path: "/mbbs-in-india",
     image:
       "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=900&q=80",
   },
-  
+
   {
     country: "Nepal",
     flag: "🇳🇵",
+    path: "/mbbs-in-nepal",
     image:
       "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=900&q=80",
   },
+
   {
     country: "Georgia",
     flag: "🇬🇪",
+    path: "/mbbs-in-georgia",
     image:
       "https://images.unsplash.com/photo-1565008576549-57569a49371d?auto=format&fit=crop&w=900&q=80",
   },
+
   {
     country: "Germany",
     flag: "🇩🇪",
+    path: "/study-in-germany",
     image:
       "https://images.unsplash.com/photo-1545987796-200677ee1011?auto=format&fit=crop&w=900&q=80",
   },
+
   {
     country: "USA",
     flag: "🇺🇸",
+    path: "/study-in-usa",
     image:
       "https://images.unsplash.com/photo-1485738422979-f5c462d49f74?auto=format&fit=crop&w=900&q=80",
   },
 ];
 
 const Destinations = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="py-20 sm:py-28 bg-[#5964B5] overflow-hidden">
-      
+
       <div className="max-w-7xl mx-auto px-5 sm:px-6">
 
         {/* Heading */}
@@ -60,14 +72,16 @@ const Destinations = () => {
 
         </div>
 
+
         {/* Destination Slider */}
         <div className="flex gap-5 overflow-x-auto pb-5 scrollbar-hide">
 
           {destinations.map((destination) => (
             <div
               key={destination.country}
+              onClick={() => navigate(destination.path)}
               className="
-                group relative 
+                group relative
                 min-w-[280px] sm:min-w-[320px]
                 h-[400px]
                 rounded-[2rem]
@@ -124,3 +138,4 @@ const Destinations = () => {
 };
 
 export default Destinations;
+

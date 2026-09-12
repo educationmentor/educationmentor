@@ -66,7 +66,14 @@ const Hero = ({ onConsultation }) => {
                 />
               </button>
 
-              <button className="px-7 py-4 rounded-full border border-white/20 text-[#F7F5F0] font-medium hover:bg-white hover:text-[#172033] transition-all duration-300">
+              <button 
+              onClick={() => {
+                document.getElementById("allblogs")?.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                });
+              }}
+              className="px-7 py-4 rounded-full border border-white/20 text-[#F7F5F0] font-medium hover:bg-white hover:text-[#172033] transition-all duration-300">
                 Explore MBBS Options
               </button>
 

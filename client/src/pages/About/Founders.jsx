@@ -28,7 +28,7 @@ const founders = [
     image: founder2,
 
     bio:
-      "A visionary educator with over 20 years of experience helping students achieve ambitious academic goals.",
+      "A visionary educator with over 20 years of experience, Kunal is the founder of the acclaimed Sterling Academy. He has a proven track record of mentoring students to top-tier global universities like Yale, Johns Hopkins, and UC Berkeley.",
 
     highlights: [
       "20+ Years Experience",
@@ -39,11 +39,11 @@ const founders = [
 
   {
     name: "Karishma",
-    role: "Senior Study Abroad Counsellor",
+    role: "Director & Senior Study Abroad Counsellor",
     image: founder3,
 
     bio:
-      "An experienced study abroad counsellor helping students navigate international education opportunities across Europe.",
+      " Karishma Mam brings over 4 years of dedicated experience in guiding students to top universities across Europe, with a proven track record in destinations like Germany, Italy, and Georgia.",
 
     highlights: [
       "4+ Years Experience",

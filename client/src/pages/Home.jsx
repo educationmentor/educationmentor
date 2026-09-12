@@ -12,7 +12,17 @@ import ConsultationForm from "../components/ConsultationForm";
 
 const Home = () => {
   const [showConsultationForm, setShowConsultationForm] = useState(false);
+  useEffect(() => {
+  const openConsultation = () => {
+    setShowConsultationForm(true);
+  };
 
+  window.addEventListener("openConsultation", openConsultation);
+
+  return () => {
+    window.removeEventListener("openConsultation", openConsultation);
+  };
+}, []);
   useEffect(() => {
     document.body.style.overflow = showConsultationForm
       ? "hidden"
@@ -35,7 +45,9 @@ const Home = () => {
 
       <Destinations />
 
-      <AllBlogs />
+      <section id="allblogs">
+        <AllBlogs />
+      </section>
 
       <FinalCTA
         onConsultation={() => setShowConsultationForm(true)}
